@@ -15,7 +15,6 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="./js/home.js"></script>
 </head>
 
@@ -31,13 +30,6 @@
 
             </div>
 
-
-
-            <!--links-->
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About me</a></li>
-            </ul>
 
             <!--contact me button-->
             <a href="#contact" class="contactt">Contact me</a>
@@ -62,7 +54,7 @@
                         <br><br>
                         <p class="content2">With the majority of buyers and sellers starting their search online, having
                             a
-                            strong and visually appealing online platform is crucial for any real estate business. </p>
+                            strong and visually appealing website is crucial for any real estate business. </p>
 
                         <br><br>
                         <!--link-->
@@ -92,49 +84,110 @@
             <!--showcase your skills-->
             <div class="showcase ">
 
-                <!--website development-->
-                <div class="card" id="webdev" style="width: 18rem;">
-
-                    <span id="devt" class="material-symbols-outlined">
-                        code
-                    </span>
-
-                    <!--<img src="./images/code-outline.png" class="card-img-top" alt="...">-->
-                    <div class="card-body">
-                        <h5 class="card-title">Website development</h5>
-                        <br>
-                        <p class="card-text">Professional and visually appealing website that showcases your listings
-                            and more.</p>
-                    </div>
-
-                </div>
-
-
-                <!--api integration-->
+                <!--New Realtors-->
                 <div class="apiinter card" id="webdev" style="width: 18rem;">
-                    <span id="apico" class="material-symbols-rounded">
-                        API
-                    </span>
+                    <img src="..." class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">API integration</h5>
+                        <h5 class="card-title">New Realtor</h5>
                         <br>
-                        <p class="card-text">Integrating your website with third-party services, such as payment
-                            gateways, property
-                            listing services, and more.</p>
+                        <p class="card-text">Designed for realtors who are just starting their careers and may not have
+                            any listings yet.</p>
+                        <p>
+                            <button class="btn btn-primary collapsed" id = "mrbtn" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#multiCollapseExample2" aria-expanded="false"
+                                aria-controls="multiCollapseExample2"  > Learn more..</button>
+                        <div class="row">
+                            <div class="col">
+                                <div class="multi-collapse collapse" id="multiCollapseExample2" style="">
+                                    <div class="card card-body">
+
+                                        <h5 style="text-align: center; font-family: 'Roboto'; font-style: normal; font-weight: 700; font-size: 25px;">$500</h5>
+                                        <ul class="">
+                                            <li class="">1 - 3 page website (up to 3 pages)</li>
+                                            <li class="">Social media integration</li>
+                                            <li class="">Compatible with mobile devices</li>
+                                            <li class="">Clear communication throughout the process</li>
+                                            <li class="">Website maintenance & hosting for $30/month</li>
+                                        </ul>
+
+                                        <a href = "/contact" class = "gtstbtn" >Get Started</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!--Website maintenance and support-->
+
+                <!--Experienced Realtors-->
+                <div class="apiinter card" id="webdev" style="width: 18rem;">
+                    <img src="..." class="card-img-top" alt="...">
+
+                    <div class="card-body">
+                        <h5 class="card-title">Experienced Realtor</h5>
+                        <br>
+                        <p class="card-text">Designed fo realtors with a truck record who want to ehance their online
+                            presence or upgrade their existing website</p>
+
+                        <!--dropdown toggle-->
+                        <p>
+                            <button class="btn btn-primary collapsed" id = "mrbtn1" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#multiCollapseExample3" aria-expanded="false"
+                                aria-controls="multiCollapseExample3">Learn more..</button>
+                        <div class="row">
+                            <div class="col">
+                                <div class="multi-collapse collapse" id="multiCollapseExample3" style="">
+                                    <div class="card card-body">
+                                        <h5 style="text-align: center; font-family: 'Roboto'; font-style: normal; font-weight: 700; font-size: 25px;">$1000</h5>
+                                        <ul class="">
+                                            <li class="">1 - 5 page website (up to 5 pages)</li>
+                                            <li class="">Social media integration</li>
+                                            <li class="">Compatible with mobile devices</li>
+                                            <li class = "">Mortgage calculator</li>
+                                            <li class = "">Blog integration</li>
+                                            <li class="">Clear communication throughout the process</li>
+                                            <li class="">Website maintenance & hosting for $30/month</li>
+                                        </ul>
+
+                                        <a href = "/contact" class = "gtstbtn" >Get Started</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!--Real estate Agency-->
                 <div class="apiinter card" id="webdev" style="width: 18rem;">
                     <span id="devt" class="material-symbols-outlined">
                         construction
                     </span>
                     <div class="card-body">
-                        <h5 class="card-title">Website maintenance</h5>
+                        <h5 class="card-title">Real Estate Agency</h5>
                         <br>
                         <p class="card-text">Providing ongoing website maintenance and support services to ensure that
                             your website is
                             always up-to-date and running smoothly.</p>
+
+                        <!--dropdown toggle-->
+                        <p>
+                            <button class="btn btn-primary collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#multiCollapseExample4" aria-expanded="false"
+                                aria-controls="multiCollapseExample4" id = "mrbtn2" >Learn more..</button>
+                        <div class="row">
+                            <div class="col">
+                                <div class="multi-collapse collapse" id="multiCollapseExample4"
+                                    style=" text-align: center;">
+                                    <div class="card card-body" >
+
+                                        <p id = "pio" >Coming soon!</p>
+
+                                        <button class = "gtstbtn" >Join the waitlist</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -197,7 +250,7 @@
 
         </div>
         <div class="col-12" id="btn3">
-            <button type="submit" class="btn " id="sbtn">Message</button>
+            <button type="submit" class="btnn3" id="sbtn">Message</button>
             <i class="fa fa-circle-o-notch fa-spin" id="spin3"></i>
         </div>
         </form>

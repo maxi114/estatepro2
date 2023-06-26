@@ -1,14 +1,27 @@
 //jquery ready function
 $(document).ready(function () {
 
-    //when user clicks contact me
-    $(".contactt").click(function () {
-        console.log("clicked")
+    //when user clicks new realtor
+    $("#mrbtn").click(function (){
+
+        $(this).hide()
+
     })
 
-    //when user get in touch
-    $(".getInTouch").click(function () {
-        console.log("touch")
+    //when user clicks experienced realtor
+    $("#mrbtn1").click(function (){
+
+        $(this).hide()
+
     })
+
+    //when user clicks real estate agency
+    $("#mrbtn2").click(function (){
+
+        $(this).hide()
+
+    })
+
+    
 })
 

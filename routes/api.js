@@ -19,21 +19,47 @@ var transporter = nodemailer.createTransport({
 });
 
 //route to send the email
-router.post("/email", ((req, res)=>{
+router.post("/email", ((req, res) => {
 
-      //compose the email
-      var mailOptions = {
+    //compose the email
+    var mailOptions = {
         from: req.body.email,
         to: "realtywebsolutions@gmail.com",
-        subject: "Message from " + req.body.name + " Email: " + req.body.email ,
+        subject: "Message from " + req.body.name + " Email: " + req.body.email,
         text: req.body.message
     };
 
     transporter.sendMail(mailOptions, function (error, info) {
-        if(info){
+        if (info) {
             res.send("sent")
         }
-        if(error){
+        if (error) {
+            res.send("An error occured!")
+        }
+    });
+
+
+}))
+
+
+//route to send the contact email
+router.post("/email2", ((req, res) => {
+
+
+    //compose the email
+    var mailOptions = {
+        from: req.body.contact.email,
+        to: "realtywebsolutions@gmail.com",
+        subject: "Message from " + req.body.contact.name + " Email: " + req.body.contact.email,
+        text: req.body.contact.message + req.body.service
+    };
+
+    transporter.sendMail(mailOptions, function (error, info) {
+        if (info) {
+            res.send("sent")
+        }
+
+        if (error) {
             res.send("An error occured!")
         }
     });

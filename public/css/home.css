@@ -8,6 +8,14 @@ body {
 
 }
 
+li {
+    margin-bottom: 10px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+}
+
 /*div holding the navigation*/
 .navigation {
     position: relative;
@@ -35,55 +43,6 @@ body {
     height: 90px;
     position: absolute;
     left: 110px;
-}
-
-ul {
-    padding: 0px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 0px;
-    height: 52px;
-    flex: none;
-    align-self: stretch;
-    flex-grow: 0;
-    position: absolute;
-    width: 100%;
-    top: 20px;
-}
-
-li {
-
-    float: left;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    padding: 0px;
-
-    width: 100px;
-    height: 24px;
-
-
-    /* Inside auto layout */
-
-    flex: none;
-    order: 2;
-    flex-grow: 0;
-}
-
-li a {
-    text-decoration: none;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 150%;
-    color: #0F1221;
-}
-
-li a:hover {
-    color: grey;
 }
 
 .contactt {
@@ -201,6 +160,28 @@ li a:hover {
 }
 
 /* ------ Provided services SECTION----------------------------*/
+
+#pio{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+
+.gtstbtn {
+    background-color: white;
+    border: solid 1px #5E3BEE;
+    border-radius: 10px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+}
+
 .skills {
     padding-top: 50px;
     max-width: 1500px;
@@ -442,25 +423,22 @@ a img {
 /*navigation max-width 500px*/
 @media screen and (max-width: 700px) {
 
-ul{
-    display: none;
-}
 
-.logo{
-    width: 200px;
-    height: 90px;
-}
+    .logo {
+        width: 200px;
+        height: 90px;
+    }
 }
 
 /*------whole page max-width 500px----*/
-@media screen and (max-width: 700px){
+@media screen and (max-width: 700px) {
 
     /*-----navigation-------------*/
-    .logo{
+    .logo {
         margin-left: 10px;
     }
 
-    .contactt{
+    .contactt {
         width: 130px;
         font-size: 15px;
         padding: 10px;
@@ -470,23 +448,25 @@ ul{
 
     /*----------header section-------------*/
     /*left section of header*/
-    .header1{
+    .header1 {
         padding-top: 50px;
     }
-    .left{
+
+    .left {
         width: 100%;
         position: relative;
         margin: 0px;
     }
-    
-    .hi{
+
+    .hi {
         margin-left: 10px;
     }
 
-    .content br{
+    .content br {
         display: none;
     }
-    .content1{
+
+    .content1 {
         max-width: 500px;
         padding: 10px;
         padding-top: 0px;
@@ -494,25 +474,26 @@ ul{
         margin-bottom: 30px;
     }
 
-    .content2{
+    .content2 {
         max-width: 500px;
         padding: 10px;
         padding-top: 0px;
         font-size: 16px;
         margin-bottom: 70px;
     }
-    .getInTouch{
+
+    .getInTouch {
         margin: 0px 0px 0px 10px;
     }
 
     /*---right --side*/
-    .right{
+    .right {
         width: 60%;
         margin-top: 0px;
     }
 
     /*----------provided services section---------*/
-    .sk2{
+    .sk2 {
         font-size: 40px;
         margin-bottom: 50px;
         margin-left: 0px;
@@ -521,18 +502,18 @@ ul{
 
     /*----about me section----*/
 
-    .about{
-        height: 500px ;
+    .about {
+        height: 500px;
     }
 
-    .abtleft{
+    .abtleft {
         margin: 0px;
         position: relative;
         width: 200px;
         height: 200px;
     }
 
-    .abtright{
+    .abtright {
         right: 0px;
         position: relative;
         margin: 0px;
@@ -542,30 +523,30 @@ ul{
         margin-top: 20px;
     }
 
-    .abtme{
+    .abtme {
         font-size: 40px;
         margin-bottom: 30px;
     }
 
-    .txtabt{
+    .txtabt {
         font-size: 17px;
     }
 
     /*-----get in touch section----------*/
-    .ctme{
+    .ctme {
         font-size: 40px;
     }
 
-    .lt{
+    .lt {
         font-size: 21px;
     }
 
     /*-----footer section--------*/
-    .twitter{
+    .twitter {
         display: none;
     }
 
-    .tiktok{
+    .tiktok {
         display: none;
     }
 
@@ -574,43 +555,45 @@ ul{
 /*------whole page max-width 700px----*/
 @media screen and (min-width: 501px) and (max-width: 700px) {
 
-    .header1{
+    .header1 {
         height: 800px;
     }
 
-   .left{
-    height: 300px;
-   }
+    .left {
+        height: 300px;
+    }
 
-   .contact{
-    max-width: 500px;
-   }
+    .contact {
+        max-width: 500px;
+    }
 }
 
 /*------max-width 700px----*/
 @media screen and (min-width: 701px) and (max-width: 900px) {
 
-        /*----------header section-------------*/
+    /*----------header section-------------*/
     /*left section of header*/
-    .header1{
+    .header1 {
         padding-top: 50px;
         height: 800px;
     }
-    .left{
+
+    .left {
         width: 100%;
         position: relative;
         margin: 0px;
         height: 300px;
     }
-    
-    .hi{
+
+    .hi {
         margin-left: 10px;
     }
 
-    .content br{
+    .content br {
         display: none;
     }
-    .content1{
+
+    .content1 {
         max-width: 500px;
         padding: 10px;
         padding-top: 0px;
@@ -618,41 +601,42 @@ ul{
         margin-bottom: 30px;
     }
 
-    .content2{
+    .content2 {
         max-width: 500px;
         padding: 10px;
         padding-top: 0px;
         font-size: 16px;
         margin-bottom: 70px;
     }
-    .getInTouch{
+
+    .getInTouch {
         margin: 0px 0px 0px 10px;
     }
 
     /*---right --side*/
-    .right{
+    .right {
         width: 60%;
         margin-top: 0px;
     }
 
-    .abtleft{
+    .abtleft {
         width: 300px;
         height: 300px;
     }
 
-    .abtright{
+    .abtright {
         width: 49%;
     }
 
     /*-------contact----------------------*/
-    .contact{
+    .contact {
         max-width: 600px;
     }
 }
 
 /*------max-width 700px----*/
 @media screen and (min-width: 901px) and (max-width: 1250px) {
-    .abtleft{
+    .abtleft {
         width: 390px;
         height: 390px;
     }

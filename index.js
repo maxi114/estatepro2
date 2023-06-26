@@ -18,7 +18,7 @@ app.use('/node_modules', express.static(__dirname + '/node_modules'));
 app.use('/api', router1);
 
 
-app.get('/', (req,res)=>{
+app.get('*', (req,res)=>{
 
     //send html file
     res.sendFile(__dirname + "/public/controller/controller.html")
