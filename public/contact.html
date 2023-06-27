@@ -22,60 +22,65 @@
 
 <body>
 
-  <div class="form2">
+  <div class="containner">
+    <div class="form23">
 
-    <br>
-    <h1 class="gt">Get Started</h1>
-    <br><br>
+      <br>
+      <p class="form-floating mb-3 gt">Get Started</p>
+      <br><br>
 
-    <p class="error" style="color: red;"></p>
+      <p class="error" style="color: red;"></p>
 
-    <div class="form-floating mb-3">
-      <input type="text" ng-model="vm.contact.name" class="form-control" id="floatingInput"
-        style="border-color: #5E3BEE;">
-      <label for="floatingInput">Name</label>
+      <div class="form-floating ">
+
+        <input type="text" ng-model="vm.contact.name" class="form-control" id="floatingInput"
+          style="border-color: #5E3BEE;">
+        <label for="floatingInput">Name</label>
+      </div>
+      <br>
+
+      <div class="form-floating">
+        <input type="email" ng-model="vm.contact.email" class="form-control" id="floatingPassword"
+          style="border-color: #5E3BEE;">
+        <label for="floatingPassword">Email</label>
+      </div>
+      <br>
+
+      <p class="wsw">Which Service would you like?</p>
+
+      <!--radio button-->
+      <div class="form-check" style="text-align: left;">
+        <input class="form-check-input" type="radio" id="new" style="border-color: #5E3BEE;">
+        <label class="form-check-label" for="exampleRadios1">
+          New Realtor - $500
+        </label>
+      </div>
+      <br>
+
+      <div class="form-check" style="text-align: left;">
+        <input class="form-check-input" type="radio" id="experience" style="border-color: #5E3BEE;">
+        <label class="form-check-label" for="exampleRadios2">
+          Experienced Realtor - $1000
+        </label>
+      </div>
+      <br>
+
+      <div class="form-floating">
+        <textarea class="form-control" id="floatingPassword" ng-model="vm.contact.message"
+          style="height: 200px; border-color: #5E3BEE;"></textarea>
+        <label for="floatingPassword"> What would you like to see on your website? </label>
+      </div>
+      <br>
+
+      <p class="error" style="color: red;"></p>
+      <br>
+      <button class="btnsub">Submit
+
+      </button>
+      <br><br>
+
+
     </div>
-    <br>
-
-    <div class="form-floating">
-      <input type="email" ng-model="vm.contact.email" class="form-control" id="floatingPassword"
-        style="border-color: #5E3BEE;">
-      <label for="floatingPassword">Email</label>
-    </div>
-    <br>
-
-    <p class="wsw">Which Service would you like?</p>
-
-    <!--radio button-->
-    <div class="form-check" style="text-align: left;">
-      <input class="form-check-input" type="radio" id="new" style="border-color: #5E3BEE;">
-      <label class="form-check-label" for="exampleRadios1">
-        New Realtor - $500
-      </label>
-    </div>
-    <br>
-
-    <div class="form-check" style="text-align: left;">
-      <input class="form-check-input" type="radio" id="experience" style="border-color: #5E3BEE;">
-      <label class="form-check-label" for="exampleRadios2">
-        Experienced Realtor - $1000
-      </label>
-    </div>
-    <br>
-
-    <div class="form-floating">
-      <textarea class="form-control" id="floatingPassword" ng-model="vm.contact.message"
-        style="height: 200px; border-color: #5E3BEE;"></textarea>
-      <label for="floatingPassword"> What would you like to see on your website? </label>
-    </div>
-    <br>
-
-    <button class="btnsub">Submit
-    
-    </button>
-    <br><br>
-
-
   </div>
 
 
