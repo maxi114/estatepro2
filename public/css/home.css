@@ -532,7 +532,7 @@ a img {
     }
 
     .txtabt {
-        font-size: 17px;
+        font-size: 19px;
     }
 
     /*-----get in touch section----------*/
@@ -549,9 +549,6 @@ a img {
         display: none;
     }
 
-    .tiktok {
-        display: none;
-    }
 
 }
 
