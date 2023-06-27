@@ -67,5 +67,31 @@ router.post("/email2", ((req, res) => {
 
 }))
 
+
+//route to join email waitlist
+router.post("/email3", ((req, res) => {
+
+
+    //compose the email
+    var mailOptions = {
+        from: req.body.email,
+        to: "realtywebsolutions@gmail.com",
+        subject: " Email: " + req.body.email,
+        text: "this is a waitlis email"
+    };
+
+    transporter.sendMail(mailOptions, function (error, info) {
+        if (info) {
+            res.send("sent")
+        }
+
+        if (error) {
+            res.send("An error occured!")
+        }
+    });
+
+
+}))
+
 //export rouer
 module.exports = router

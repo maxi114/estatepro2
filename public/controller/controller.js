@@ -31,7 +31,64 @@
         //hide the spin btn
         $("#spin3").hide()
         $(".error").html("")
+        //remove the error message
+        $(".error2").html("")
 
+
+        //when user clicks the modal join waitlist
+        $("#jwl").on("click", () => {
+
+            //remove the error message
+            $(".error2").html("")
+
+            //check if there is an email
+            if (!vm.waitlist) {
+                $(".error2").html("Please type in a valid email address")
+                return
+            }
+
+            //hide the message btn
+            $("#jwl").hide()
+
+            //show the loading circle
+            $("#spin4").show()
+
+            //post the info to the server
+            $http.post("/api/email3", vm.waitlist)
+                .then((res) => {
+
+                    //if the email is sent
+                    if (res.data == "sent") {
+
+                        //hide the loading circle
+                        $("#spin4").hide()
+
+                        //change the message btn to sent
+                        $("#jwl").html("You have joined the waitlist")
+
+                        //change the background and text color
+                        $("#jwl").css({ "background-color": "green", "color": "white" })
+
+                        //show the button
+                        $("#jwl").show()
+                    }
+
+                    //when an error occurs
+                    if (res.data == "An error occured!") {
+                        $("#jwl").html("error occured")
+                        //change the background and text color
+                        $("#jwl").css({ "background-color": "red", "color": "white" })
+                        //show the button
+                        $("#jwl").show()
+                    }
+
+                    //refresh the page
+                    setTimeout(() => {
+                        location.href = "/"
+                    }, 1500)
+                })
+
+        })
 
         //when user clicks get started
         $(".gtstbtn").click(function () {
@@ -71,7 +128,7 @@
             $(".error").html("")
 
             //hide the message btn
-            $(".btn").hide()
+            $(".btnn3").hide()
 
             //show the loading circle
             $("#spin3").show()
@@ -87,22 +144,22 @@
                         $("#spin3").hide()
 
                         //change the message btn to sent
-                        $(".btn").html("Sent")
+                        $(".btnn3").html("Sent")
 
                         //change the background and text color
-                        $(".btn").css({ "background-color": "green", "color": "white" })
+                        $(".btnn3").css({ "background-color": "green", "color": "white" })
 
                         //show the button
-                        $(".btn").show()
+                        $(".btnn3").show()
                     }
 
                     //when an error occurs
-                    if (res.data = "An error occured!") {
-                        $(".btn").html("Sent")
+                    if (res.data == "An error occured!") {
+                        $(".btnn3").html("An error occured")
                         //change the background and text color
-                        $(".btn").css({ "background-color": "red", "color": "white" })
+                        $(".btnn3").css({ "background-color": "red", "color": "white" })
                         //show the button
-                        $(".btn").show()
+                        $(".btnn3").show()
                     }
 
                     setTimeout(() => {
@@ -159,8 +216,8 @@
                 return
             }
 
-             //check if radio button is clicked
-             if(service == ""){
+            //check if radio button is clicked
+            if (service == "") {
                 $(".error").html("Select the service that you would like below .")
                 return
             }
@@ -172,30 +229,33 @@
             }
 
             //post info to the server
-            $http.post("/api/email2",{
+            $http.post("/api/email2", {
                 contact: vm.contact,
                 service: service
             })
-            .then((res)=>{
+                .then((res) => {
 
-                console.log(res.data)
-                if(res.data == "sent"){
-                    
-                    $(".btnsub").html("Sent")
-                    $(".btnsub").css({"background-color":"green", "color": "white", "border": "solid 1px green",})
-                    $(".btnsub").css({})
+                    if (res.data == "sent") {
+
+                        $(".btnsub").html("Sent")
+                        $(".btnsub").css({ "background-color": "green", "color": "white", "border": "solid 1px green", })
+                        $(".btnsub").css({})
+
+                        setTimeout(() => {
+                            $(".contact-form").hide();
+                            location.href = "/"
+                        }, 3000)
+
+                    }
+
+                    if (res.data == "An error occured!") {
+                        $(".error").html("an error occured!")
+                    }
 
                     setTimeout(() => {
-                        $(".contact-form").hide();
                         location.href = "/"
-                    }, 3000)
-
-                }
-
-                if(res.data == "An error occured!" ){
-                    $(".error").html("an error occured!")
-                }
-            })
+                    }, 1500)
+                })
 
         })
     }

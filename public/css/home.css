@@ -363,6 +363,9 @@ li {
 #sbtn {
     background-color: #5E3BEE;
     color: white;
+    border: solid 1px #5E3BEE;
+    padding: 20px;
+    border-radius: 10px;
 }
 
 #sbtn:hover {

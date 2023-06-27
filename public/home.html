@@ -19,6 +19,7 @@
 </head>
 
 <body>
+
     <!--div holding the whole page-->
     <div class="container2">
 
@@ -86,22 +87,23 @@
 
                 <!--New Realtors-->
                 <div class="apiinter card" id="webdev" style="width: 18rem;">
-                    <img src="..." class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">New Realtor</h5>
                         <br>
                         <p class="card-text">Designed for realtors who are just starting their careers and may not have
                             any listings yet.</p>
                         <p>
-                            <button class="btn btn-primary collapsed" id = "mrbtn" type="button" data-bs-toggle="collapse"
+                            <button class="btn btn-primary collapsed" id="mrbtn" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#multiCollapseExample2" aria-expanded="false"
-                                aria-controls="multiCollapseExample2"  > Learn more..</button>
+                                aria-controls="multiCollapseExample2"> Learn more..</button>
                         <div class="row">
                             <div class="col">
                                 <div class="multi-collapse collapse" id="multiCollapseExample2" style="">
                                     <div class="card card-body">
 
-                                        <h5 style="text-align: center; font-family: 'Roboto'; font-style: normal; font-weight: 700; font-size: 25px;">$500</h5>
+                                        <h5
+                                            style="text-align: center; font-family: 'Roboto'; font-style: normal; font-weight: 700; font-size: 25px;">
+                                            $500</h5>
                                         <ul class="">
                                             <li class="">1 - 3 page website (up to 3 pages)</li>
                                             <li class="">Social media integration</li>
@@ -110,7 +112,7 @@
                                             <li class="">Website maintenance & hosting for $30/month</li>
                                         </ul>
 
-                                        <a href = "/contact" class = "gtstbtn" >Get Started</a>
+                                        <a href="/contact" class="gtstbtn">Get Started</a>
                                     </div>
                                 </div>
                             </div>
@@ -121,7 +123,6 @@
 
                 <!--Experienced Realtors-->
                 <div class="apiinter card" id="webdev" style="width: 18rem;">
-                    <img src="..." class="card-img-top" alt="...">
 
                     <div class="card-body">
                         <h5 class="card-title">Experienced Realtor</h5>
@@ -131,25 +132,27 @@
 
                         <!--dropdown toggle-->
                         <p>
-                            <button class="btn btn-primary collapsed" id = "mrbtn1" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#multiCollapseExample3" aria-expanded="false"
+                            <button class="btn btn-primary collapsed" id="mrbtn1" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#multiCollapseExample3" aria-expanded="false"
                                 aria-controls="multiCollapseExample3">Learn more..</button>
                         <div class="row">
                             <div class="col">
                                 <div class="multi-collapse collapse" id="multiCollapseExample3" style="">
                                     <div class="card card-body">
-                                        <h5 style="text-align: center; font-family: 'Roboto'; font-style: normal; font-weight: 700; font-size: 25px;">$1000</h5>
+                                        <h5
+                                            style="text-align: center; font-family: 'Roboto'; font-style: normal; font-weight: 700; font-size: 25px;">
+                                            $1000</h5>
                                         <ul class="">
                                             <li class="">1 - 5 page website (up to 5 pages)</li>
                                             <li class="">Social media integration</li>
                                             <li class="">Compatible with mobile devices</li>
-                                            <li class = "">Mortgage calculator</li>
-                                            <li class = "">Blog integration</li>
+                                            <li class="">Mortgage calculator</li>
+                                            <li class="">Blog integration</li>
                                             <li class="">Clear communication throughout the process</li>
                                             <li class="">Website maintenance & hosting for $30/month</li>
                                         </ul>
 
-                                        <a href = "/contact" class = "gtstbtn" >Get Started</a>
+                                        <a href="/contact" class="gtstbtn">Get Started</a>
                                     </div>
                                 </div>
                             </div>
@@ -160,30 +163,63 @@
 
                 <!--Real estate Agency-->
                 <div class="apiinter card" id="webdev" style="width: 18rem;">
-                    <span id="devt" class="material-symbols-outlined">
-                        construction
-                    </span>
                     <div class="card-body">
                         <h5 class="card-title">Real Estate Agency</h5>
                         <br>
-                        <p class="card-text">Providing ongoing website maintenance and support services to ensure that
-                            your website is
-                            always up-to-date and running smoothly.</p>
+                        <p class="card-text">Designed for real estate agencies that require websites and digital solutions to represent their brand and showcase their listings.</p>
 
                         <!--dropdown toggle-->
                         <p>
                             <button class="btn btn-primary collapsed" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#multiCollapseExample4" aria-expanded="false"
-                                aria-controls="multiCollapseExample4" id = "mrbtn2" >Learn more..</button>
+                                aria-controls="multiCollapseExample4" id="mrbtn2">Learn more..</button>
                         <div class="row">
                             <div class="col">
                                 <div class="multi-collapse collapse" id="multiCollapseExample4"
                                     style=" text-align: center;">
-                                    <div class="card card-body" >
+                                    <div class="card card-body">
 
-                                        <p id = "pio" >Coming soon!</p>
+                                        <p id="pio">Coming soon!</p>
 
-                                        <button class = "gtstbtn" >Join the waitlist</button>
+                                        <!-- Button trigger modal -->
+                                        <button class="gtstbtn" data-bs-toggle="modal"
+                                            data-bs-target="#exampleModal">Join the waitlist</button>
+
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="exampleModal" tabindex="-1"
+                                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Join the
+                                                            waitlist
+                                                        </h1>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                            aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+
+                                                        <p class = "error2" style="color: red;"></p>
+
+                                                        <div class="form-floating">
+                                                            <input type="email" ng-model="vm.waitlist.email"
+                                                                class="form-control" id="floatingPassword"
+                                                                style="border-color: #5E3BEE;">
+                                                            <label for="floatingPassword">Email</label>
+                                                        </div>
+
+                                                    </div>
+
+                                                    <div class="modal-footer">
+                                                        <button type="button" id="jwl" class="btn btn-primary">Join
+                                                            waitlist </button>
+                                                            <i class="fa fa-circle-o-notch fa-spin" id="spin4" style="display: none;"></i>
+                                                            
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
                                     </div>
                                 </div>
                             </div>
@@ -213,8 +249,7 @@
                         unique
                         challenges
                         faced by real estate agents when it comes to their online presence. That's why I offer a range
-                        of services, including website development, API integration, and website maintenance, to help my
-                        clients
+                        of services to help you
                         stand out in this competitive real estate market with customized solutions tailored to your
                         specific needs.</p>
                 </div>
@@ -268,19 +303,19 @@
                 <div class="sociallinks">
 
                     <!--instagram link-->
-                    <a class="inst" href="http://" target="_blank">
+                   <!--- <a class="inst" href="http://" target="_blank">
                         <img src="./images/instagram.png" alt="" srcset="">
-                    </a>
+                    </a>-->
 
                     <!--tiktok link-->
-                    <a class="tiktok" href="http://" target="_blank">
+                    <a class="tiktok" href="https://www.tiktok.com/@realtywebsolutions" target="_blank">
                         <img src="./images/tiktok.png" alt="" srcset="">
                     </a>
 
                     <!--twitter lnk-->
-                    <a class="twitter" href="http://" target="_blank">
+                    <!--<a class="twitter" href="http://" target="_blank">
                         <img src="./images/twiter.png" alt="" srcset="">
-                    </a>
+                    </a>-->
 
                 </div>
             </div>
