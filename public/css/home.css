@@ -1,643 +1,401 @@
 body {
+    margin: 0px;
     padding: 0px;
-    margin: 0px;
-}
-
-.container2 {
-    text-align: center;
-
-}
-
-li {
-    margin-bottom: 10px;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 17px;
-}
-
-/*div holding the navigation*/
-.navigation {
-    position: relative;
-    text-align: center;
-    height: 90px;
-    width: 100%;
-}
-
-/*logo*/
-.logo {
-    margin: 0px;
-    width: 200px;
-    height: 90px;
-    text-align: center;
-    margin-left: 20px;
-    position: absolute;
-    background-image: url(../images/real2black.png);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.logo2 {
-    width: 100px;
-    height: 90px;
-    position: absolute;
-    left: 110px;
-}
-
-.contactt {
-    margin: 0px;
-    width: 170.67px;
-    border-radius: 5.33333px;
-    font-size: 20px;
-    color: white;
-    border: solid 1px #5E3BEE;
-    color: #5E3BEE;
-    background-color: white;
-    padding: 15px;
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    text-decoration: none;
-}
-
-.contactt:hover {
-    background-color: #5E3BEE;
-    color: white;
-    cursor: pointer;
-}
-
-/*header section*/
-.header1 {
-    background: #F5FCFF;
-    width: 100%;
-    height: 900px;
-    position: relative;
-}
-
-.header {
-    max-width: 1500px;
-    margin: auto;
-    position: relative;
-}
-
-/*left section of the header*/
-.left {
-    width: 50%;
-    height: 526.67px;
-    margin: 0;
-    margin-left: 20px;
-    position: absolute;
-    text-align: left;
-    margin-top: 200px;
-}
-
-/*text inside the left header*/
-.hi {
-    width: 141px;
-    height: 32px;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 21.3333px;
 }
 
 
 .content1 {
-    width: 100%;
-
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 50.6667px;
-    margin: 0px;
-}
-
-.content2 {
-    margin: 0px;
-    width: 100%;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-}
-
-/*get in touch button*/
-.getInTouch {
-    padding: 15px;
-    background: #5E3BEE;
-    border-radius: 5.33333px;
-    font-size: 20px;
-    color: white;
-    margin-top: 50px;
-    border: solid 1px #5E3BEE;
-    text-decoration: none;
-}
-
-.getInTouch:hover {
-    cursor: pointer;
-    color: #5E3BEE;
-    background-color: white;
-}
-
-.content1 label {
-    color: #5E3BEE;
-    margin: 0px;
-    padding: 0px;
-}
-
-/*right side*/
-.right {
-    width: 45%;
-    height: 700px;
-    position: absolute;
-    right: 20px;
-    margin-top: 50px;
-}
-
-.pic1 {
-    width: 100%;
-}
-
-/* ------ Provided services SECTION----------------------------*/
-
-#pio{
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 17px;
-    margin-bottom: 10px;
-}
-
-.gtstbtn {
-    background-color: white;
-    border: solid 1px #5E3BEE;
-    border-radius: 10px;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 17px;
-    text-decoration: none;
-    color: black;
-    text-align: center;
-}
-
-.skills {
-    padding-top: 50px;
-    max-width: 1500px;
-    margin: auto;
-}
-
-.sk2 {
-    text-align: left;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 50.6667px;
-    margin-bottom: 100px;
-    margin-left: 20px;
-}
-
-.showcase {
-    display: flex;
-    flex-flow: wrap;
-    justify-content: center;
-    margin-left: 20px;
-    margin-right: 20px;
-}
-
-
-
-#webdev {
-    border: none;
-    margin: 10px;
-    text-align: left;
-    background: #F5FCFF;
-    border-bottom: 4px solid #5E3BEE;
-    border-radius: 10.6667px;
-}
-
-
-#devt {
-    font-size: 30px;
-    color: green;
-    width: max-content;
-    padding: 5px;
-    margin: 15px;
-    background: #FFFFFF;
-    box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.1);
-    border-radius: 10.6667px;
-}
-
-#apico {
-    font-size: 20px;
-    color: green;
-    width: max-content;
-    padding: 5px;
-    margin: 15px;
-    background: #FFFFFF;
-    box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.1);
-    border-radius: 10.6667px;
-}
-
-.card-title {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 25px;
-}
-
-.card-text {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 17px;
-}
-
-/*------------about me section-------------------*/
-
-.about1 {
-    margin-top: 50px;
-    background-color: #F5FCFF;
-    border-radius: 10.6667px;
-    ;
-}
-
-.about {
-    max-width: 1500px;
-    margin: auto;
-    position: relative;
-    height: 800px;
-}
-
-
-
-.abtleft {
-    position: absolute;
-    width: 550px;
-    height: 550px;
-    left: 20px;
-    border-radius: 50%;
-    background-image: url(../images/pexels-nino-sanger-14998334.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    border-bottom: 4px solid #5E3BEE;
-    margin-top: 150px;
-}
-
-
-.abtright {
-    position: absolute;
-    right: 30px;
-    width: 50%;
-    margin-top: 200px;
-}
-
-.abtme {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 50.6667px;
-    margin-bottom: 50px;
-    text-align: left;
-}
-
-.txtabt {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    text-align: left;
-}
-
-
-
-/*-------------contact me section--------------*/
-.contact {
-    padding: 30px;
-    padding-top: 100px;
-    max-width: 1000px;
-    margin: auto;
-
-}
-
-.gtin {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 21.3333px;
-}
-
-.ctme {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 64px;
-}
-
-.lt {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 24px;
-}
-
-.ccrmform {
-    text-align: left;
-}
-
-#Fname {
-    border-color: #5E3BEE
-}
-
-#Lname {
-    border-color: #5E3BEE
-}
-
-#message {
-    border-color: #5E3BEE;
-    height: 200px;
-}
-
-#sbtn {
-    background-color: #5E3BEE;
-    color: white;
-    border: solid 1px #5E3BEE;
-    padding: 20px;
-    border-radius: 10px;
-}
-
-#sbtn:hover {
-    color: #5E3BEE;
-    background-color: white;
-    border-color: #5E3BEE;
-}
-
-/*------------------------------footer-------------------*/
-
-.footer {
-    position: relative;
-    background-color: #F5FCFF;
-    height: 120px;
-    margin: auto;
-}
-
-.ftlogo {
-    width: 200px;
-    height: 90px;
-    background-image: url(../images/real2black.png);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: absolute;
-    top: 50%;
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-    margin-left: 20px;
-}
-
-.sociallinks {
-    text-align: right;
+    background-color: black;
     height: max-content;
+    padding-bottom: 100px;
+}
+
+.content11 {
+    max-width: 1500px;
+    padding: 0px 15px 0px 15px;
+    margin: auto;
+    position: relative;
+}
+
+/*------navigation bar ------------*/
+#nav {
+    background-color: black;
+}
+
+#img {
+    width: 200px;
+    height: 50px
+}
+
+#navbarNav ul li a {
+    color: white;
+}
+
+/*--------------content-----------*/
+.contenttop {
+    height: 300px;
+    margin-top: 60px;
+}
+
+/*left section*/
+.left {
     position: absolute;
-    margin-top: 50px;
+    width: 50%;
+    height: 300px
+}
+
+.ltxt {
+    color: white;
+    font-family: 'THICCCBOI';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 90px;
+}
+
+label {
+    color: #F15A29;
+}
+
+/*right section*/
+.right {
+    position: absolute;
+    width: 40%;
+    height: 300px;
     right: 0;
 }
 
-.sociallinks a {
+.rtxt {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    color: white;
+    margin-top: 20px;
+    text-transform: capitalize;
+}
+
+.fbtn {
+    border: none;
+    width: 140px;
+    height: 58px;
+    color: white;
+    background: #F15A29;
+    border-radius: 12px;
+    margin-top: 20px;
+
+}
+
+.ratings {
+
+    display: flex;
+    flex-flow: wrap;
+    justify-content: left;
+    margin-top: 20px;
+}
+
+/*bottom content*/
+.contentbottom {
+    position: relative;
+    max-width: 90%;
+    margin: auto;
+    margin-top: 70px;
+}
+
+.image {
+    width: 100%;
+    height: 400px;
+    background-image: url(../images/luke-van-zyl-koH7IVuwRLw-unsplash.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+/*search section*/
+.d-flex {
+    position: absolute;
+    background-color: white;
+    width: 400px;
+    margin-left: 50px;
+    padding: 5px;
+    bottom: -20px;
+    border-radius: 10px;
+}
+
+.d-flex input {
+    border: none;
+    outline: none;
+}
+
+.d-flex button {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    background-color: #F15A29;
+    color: white;
+    width: 250px;
+    border: none;
+}
+
+.d-flex button:hover {
+    background-color: #F15A29
+}
+
+.icc {
+    color: #F15A29;
+    margin-top: 5px;
+}
+
+/*-------second secion (Trusted by)------------------*/
+
+.content2 {
+    height: 170px;
+    max-width: 1500px;
+    margin: auto;
+    position: relative;
+}
+
+.trust {
+    position: absolute;
+    width: 200px;
+    margin-top: 60px;
+    margin-left: 15px;
+}
+
+.comp {
+    position: absolute;
+    width: 80%;
+    right: 15px;
+    top: 60px;
+    display: flex;
+    flex-flow: wrap;
+    justify-content: right;
+
+}
+
+.cmpl {
+    margin-right: 60px;
+}
+
+.cmpl2 {
+    margin: 0px;
+}
+
+/*------------third section (Popular resident)-------------*/
+
+.content3 {
+    position: relative;
+    max-width: 1200px;
+    margin: auto;
+    height: 1700px;
+}
+
+.ppr {
+    margin-left: 15px;
+    font-family: 'THICCCBOI';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 50px;
+}
+
+.exp {
+    position: absolute;
+    right: 15px;
+    top: 20px;
+}
+
+/*left section*/
+.left3 {
+    position: absolute;
+    width: 45%;
+    left: 15px;
+}
+
+/*right section*/
+.right3 {
+    position: absolute;
+    width: 45%;
+    right: 15px;
+    margin-top: 150px;
+}
+
+/*card*/
+.card {
+    margin-top: 50px;
+}
+
+.line2 {
+    border: 1px solid #070707;
+    width: 100px;
+    margin-bottom: 20px;
+}
+
+.line3 {
+    opacity: 0.25;
+    border: 1px solid grey;
+}
+
+.card-title {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+}
+
+.card-text {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+}
+
+.card-link {
+    width: 130px;
+    margin: 0px;
+}
+
+/*--------------------what our clients say section-----------------------*/
+.clienttt {
+    background-image: url(../images/image22.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    margin-bottom: 100px;
+}
+
+.clientt2 {
+    position: relative;
+    text-align: left;
+    max-width: 1500px;
+    margin: auto;
+}
+
+.wcs {
+    font-family: 'THICCCBOI';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 50px;
+}
+
+.imghs {
+    position: relative;
+}
+
+.imghs1 {
+    background-image: url(../images/image44.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 800px;
+    height: 500px;
+    border-radius: 10px;
+
+}
+
+#cardd {
+    position: absolute;
+    top: 25px;
+    right: 250px;
+}
+
+.card-text {
+    font-family: 'THICCCBOI';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+#prrf {
+    background-image: url(../images/Ellipse198.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 0px;
+    float: left;
+}
+
+#prrf2 {
+    margin-left: 90px;
+    margin-top: 40px;
+}
+
+.gitcs {
+    width: 200px;
+    height: 100px;
+    border: none;
     text-decoration: none;
-    margin: 20px;
+    font-size: 20px;
+    background-color: #F15A29;
+    color: white;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 100px;
 }
 
-a img {
-    width: 30px;
-    height: 30px;
-    border-radius: 5px;
+/*---------------div holding the help you find your dream home------*/
+.help {
+    height: 800px;
+    position: relative;
+    max-width: 1500px;
+    margin: auto;
 }
 
-/*for errors*/
-.error {
-    color: red;
-}
-
-/*---------------------responsiveness------------------------*/
-
-/*navigation max-width 500px*/
-@media screen and (max-width: 700px) {
-
-
-    .logo {
-        width: 200px;
-        height: 90px;
-    }
-}
-
-/*------whole page max-width 500px----*/
-@media screen and (max-width: 700px) {
-
-    /*-----navigation-------------*/
-    .logo {
-        margin-left: 10px;
-    }
-
-    .contactt {
-        width: 130px;
-        font-size: 15px;
-        padding: 10px;
-        top: 25px;
-        right: 10px;
-    }
-
-    /*----------header section-------------*/
-    /*left section of header*/
-    .header1 {
-        padding-top: 50px;
-    }
-
-    .left {
-        width: 100%;
-        position: relative;
-        margin: 0px;
-    }
-
-    .hi {
-        margin-left: 10px;
-    }
-
-    .content br {
-        display: none;
-    }
-
-    .content1 {
-        max-width: 500px;
-        padding: 10px;
-        padding-top: 0px;
-        font-size: 40px;
-        margin-bottom: 30px;
-    }
-
-    .content2 {
-        max-width: 500px;
-        padding: 10px;
-        padding-top: 0px;
-        font-size: 19px;
-        margin-bottom: 70px;
-    }
-
-    .getInTouch {
-        margin: 0px 0px 0px 10px;
-    }
-
-    /*---right --side*/
-    .right {
-        width: 60%;
-        margin-top: 0px;
-    }
-
-    /*----------provided services section---------*/
-    .sk2 {
-        font-size: 40px;
-        margin-bottom: 50px;
-        margin-left: 0px;
-        text-align: center;
-    }
-
-    /*----about me section----*/
-
-    .about {
-        height: 500px;
-    }
-
-    .abtleft {
-        margin: 0px;
-        position: relative;
-        width: 200px;
-        height: 200px;
-    }
-
-    .abtright {
-        right: 0px;
-        position: relative;
-        margin: 0px;
-        margin-top: 50px;
-        width: 350px;
-        margin: auto;
-        margin-top: 20px;
-    }
-
-    .abtme {
-        font-size: 40px;
-        margin-bottom: 30px;
-    }
-
-    .txtabt {
-        font-size: 19px;
-    }
-
-    /*-----get in touch section----------*/
-    .ctme {
-        font-size: 40px;
-    }
-
-    .lt {
-        font-size: 21px;
-    }
-
-    /*-----footer section--------*/
-    .twitter {
-        display: none;
-    }
-
+.helpics {
+    position: absolute;
+    background-image: url(../images/Group.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 49%;
+    height: 800px;
+    left: 0;
 
 }
 
-/*------whole page max-width 700px----*/
-@media screen and (min-width: 501px) and (max-width: 700px) {
-
-    .header1 {
-        height: 800px;
-    }
-
-    .left {
-        height: 300px;
-    }
-
-    .contact {
-        max-width: 500px;
-    }
+.contenthelp {
+    position: absolute;
+    right: 0px;
+    width: 49%;
+    height: 400px;
+    margin-top: 300px;
 }
 
-/*------max-width 700px----*/
-@media screen and (min-width: 701px) and (max-width: 900px) {
-
-    /*----------header section-------------*/
-    /*left section of header*/
-    .header1 {
-        padding-top: 50px;
-        height: 800px;
-    }
-
-    .left {
-        width: 100%;
-        position: relative;
-        margin: 0px;
-        height: 300px;
-    }
-
-    .hi {
-        margin-left: 10px;
-    }
-
-    .content br {
-        display: none;
-    }
-
-    .content1 {
-        max-width: 500px;
-        padding: 10px;
-        padding-top: 0px;
-        font-size: 40px;
-        margin-bottom: 30px;
-    }
-
-    .content2 {
-        max-width: 500px;
-        padding: 10px;
-        padding-top: 0px;
-        font-size: 16px;
-        margin-bottom: 70px;
-    }
-
-    .getInTouch {
-        margin: 0px 0px 0px 10px;
-    }
-
-    /*---right --side*/
-    .right {
-        width: 60%;
-        margin-top: 0px;
-    }
-
-    .abtleft {
-        width: 300px;
-        height: 300px;
-    }
-
-    .abtright {
-        width: 49%;
-    }
-
-    /*-------contact----------------------*/
-    .contact {
-        max-width: 600px;
-    }
+.contenthelp p {
+    margin-top: 30px;
+    margin-bottom: 10px;
 }
 
-/*------max-width 700px----*/
-@media screen and (min-width: 901px) and (max-width: 1250px) {
-    .abtleft {
-        width: 390px;
-        height: 390px;
-    }
+/*-------subscribe to the news letter section*--------*/
+.news {
+    position: relative;
+    border: solid 1px red;
+   
+    height: 300px;
+    background-color: #F15A29;
+    color: white;
+    border-radius: 15px;
+    max-width: 1500px;
+    margin: auto;
+    margin-top: 100px;
+}
+
+.newsh1 {
+    width: 400px;
+    margin-top: 100px;
+    font-family: 'THICCCBOI';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    margin-left: 150px;
+}
+
+#dds {
+    margin-bottom: 110px;
+    height:70px ;
+    width: 500px;
+    margin-right: 150px;
 }
