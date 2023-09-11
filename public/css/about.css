@@ -174,7 +174,7 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 1200px;
+    height: max-content;
     padding: 10px;
 }
 
@@ -230,9 +230,53 @@ body {
     height: 300px;
 }
 
+.team2 div #img5 {
+    background-image: url("../images/fdgjpg.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 300px;
+}
+
+.team2 div #img55 {
+    background-image: url("../images/techleG.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 300px;
+}
+
+.team2 div #img555 {
+    background-image: url("../images/chris.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 300px;
+}
+
+.team2 div #img56 {
+    background-image: url("../images/samwil.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 300px;
+}
+
+.team2 div #img57 {
+    background-image: url("../images/tony.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 300px;
+}
 /*----------------section3--------------------*/
 .section3 {
-    height: 500px;
+    height: max-content;
     padding: 10px;
 }
 
@@ -249,19 +293,250 @@ body {
     margin-top: 100px;
 }
 
-.articles2{
+.articles2 {
     display: flex;
     flex-flow: wrap;
     justify-content: center;
-    border: solid 1px red;
     margin-top: 50px;
 }
 
-.articles2 div #img2{
+.articles2 div #img2 {
     background-image: url("../images/hs1.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
-    height: 150px;
+    height: 200px;
+    border-radius: 10px;
+}
+
+.articles2 div #img22 {
+    background-image: url("../images/Rectangle\ 417.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+}
+
+.articles2 div #img222 {
+    background-image: url("../images/Rectangle\ 418.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+}
+
+.card {
+    min-width: 350px;
+    border-radius: 10px;
+    border: 1px solid var(--Neutral-300, #D6D6D6);
+}
+
+.articles2 .card-text {
+    font-family: Plus Jakarta Sans;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+}
+
+#img33 {
+    background-image: url("../images/wrapper.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 20px;
+    width: 240px;
+}
+
+#vline {
+    border-top: solid .5px rgba(7, 7, 7, .4);
+    max-width: 340px;
+    margin: auto;
+}
+
+.articles2 .card {
+    margin: 20px;
+}
+
+/*-------subscribe to the news letter section*--------*/
+.news {
+    position: relative;
+    border: solid 1px red;
+
+    height: 300px;
+    background-color: #F15A29;
+    color: white;
+    border-radius: 15px;
+    max-width: 1500px;
+    margin: auto;
+    margin-top: 100px;
+}
+
+.newsh1 {
+    width: 400px;
+    margin-top: 100px;
+    font-family: 'THICCCBOI';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    margin-left: 150px;
+}
+
+#dds {
+    margin-bottom: 110px;
+    height: 70px;
+    width: 500px;
+    margin-right: 150px;
+}
+
+/*search section*/
+.d-flex {
+    position: absolute;
+    background-color: white;
+    width: 400px;
+    margin-left: 50px;
+    padding: 5px;
+    bottom: -20px;
+    border-radius: 10px;
+}
+
+.d-flex input {
+    border: none;
+    outline: none;
+}
+
+.d-flex button {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    background-color: #F15A29;
+    color: white;
+    width: 250px;
+    border: none;
+}
+
+.d-flex button:hover {
+    background-color: #F15A29
+}
+
+/*--------------------------------------footer------------------------------------------*/
+footer {
+    position: relative;
+    height: 400px;
+    width: 100%;
+    background-color: black;
+    padding-top: 100px;
+    margin-top: 200px;
+}
+
+/*left side of the footer*/
+.footerleft {
+    width: 350px;
+    margin: 0px;
+    margin-left: 50px;
+}
+
+.footerlogo {
+    background-image: url("../images/logo.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 200px;
+    height: 40px;
+
+}
+
+.footerleft p {
+    color: var(--Neutral-100, #FFF);
+    font-family: Plus Jakarta Sans;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    margin-top: 40px;
+}
+
+/*right side of the footer*/
+.footerright {
+    width: 500px;
+    position: absolute;
+    right: 20px;
+    top: 70px;
+    display: flex;
+    flex-flow: wrap;
+    justify-content: left;
+}
+
+.footermenu {
+    width: 200px;
+}
+
+.footermenu h2 {
+    color: var(--Neutral-100, #ffffff);
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: Plus Jakarta Sans;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+}
+
+.footermenu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.footermenu ul li a {
+    color: var(--Neutral-100, #dcdbdb);
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: Plus Jakarta Sans;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.footersocials {
+    width: 200px;
+    height: 300px;
+}
+
+.footersocials h3 {
+    color: var(--Neutral-100, #FFF);
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: Plus Jakarta Sans;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+}
+
+.footer3 {
+    border-top: solid 1px rgba(255, 255, 255, .5);
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    padding-top: 20px;
+}
+
+.footer3 p {
+    color: var(--Neutral-100, #FFF);
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: Plus Jakarta Sans;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.footer3 p a {
+    color: var(--Primary-Color, #F15A29);
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: Plus Jakarta Sans;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    text-decoration-line: underline;
 }
