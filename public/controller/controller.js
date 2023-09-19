@@ -13,10 +13,17 @@
             controllerAs: "vm",
         })
 
-         //home page
+         //about page
          $routeProvider.when('/about', {
             templateUrl: "./about.html",
             controller: "AboutController",
+            controllerAs: "vm",
+        })
+
+         //post page
+         $routeProvider.when('/post', {
+            templateUrl: "./post.html",
+            controller: "PostController",
             controllerAs: "vm",
         })
 
@@ -28,7 +35,6 @@
 
         var vm = this
 
-
     }
 
      //about controller
@@ -37,9 +43,15 @@
  
          var vm = this
  
- 
      }
  
+     //post controller
+     app.controller("PostController", PostController);
+     function PostController($location, $scope, $window, $http) {
+ 
+         var vm = this
+ 
+     }
 
 
 }())
