@@ -101,10 +101,10 @@
 
                 <div class="row">
                     <div class="col">
-                        <input type="text" class="form-control" placeholder="Enter Your Full Name">
+                        <input type="text" class="form-control" placeholder="Enter Your Full Name" ng-model = "vm.client.name" required>
                     </div>
                     <div class="col">
-                        <input type="text" class="form-control" placeholder="Email Address">
+                        <input type="text" class="form-control" placeholder="Email Address" ng-model = "vm.client.email" required>
                     </div>
                 </div>
 
@@ -112,7 +112,7 @@
 
                 <div class="row">
                     <div class="col">
-                        <input type="text" class="form-control" placeholder="Your Phone Number">
+                        <input type="text" class="form-control" placeholder="Your Phone Number" ng-model = "vm.client.phone" required>
                     </div>
                 </div>
 
@@ -128,15 +128,15 @@
 
                 <div class="row">
                     <div class="col">
-                        <input type="text" class="form-control" placeholder="Enter Your Full Name">
+                        <input type="text" class="form-control" placeholder="Listing Title" ng-model = "vm.property.title">
                     </div>
 
                     <!--property type-->
                     <div class="col">
-                        <select id="PropertyType" class="form-control">
-                            <option>Property Type</option>
-                            <option>...</option>
-                            <option>...</option>
+                        <select id="PropertyType" class="form-control" ng-model = "vm.property.PropertyType" required>
+                            <option value = "" >--Property type--</option>
+                            <option value = "Commercial" >Commercial</option>
+                            <option value = "Residential" > Residential</option>
                         </select>
                     </div>
                     
@@ -148,16 +148,16 @@
 
                     <!--listing type--->
                     <div class="col">
-                        <select id="inputState" class="form-control">
-                            <option selected>Listing Type</option>
-                            <option>...</option>
-                            <option>...</option>
+                        <select id="inputState" class="form-control" ng-model = "vm.property.ListingType" required>
+                            <option value = "" >---Listing Type---</option>
+                            <option>Rent</option>
+                            <option>Sell</option>
                         </select>
                     </div>
 
                     <!--location-->
                     <div class="col">
-                        <input type="text" class="form-control" placeholder="Location">
+                        <input type="text" class="form-control" placeholder="Location" ng-model = "vm.property.Location" required>
                     </div>
 
                 </div>
@@ -167,12 +167,14 @@
 
                 <div class="row">
 
+                    <!--Number of bathrooms--->
                     <div class="col">
-                        <input type="text" class="form-control" placeholder="Address">
+                        <input type="number" class="form-control" placeholder="Bathrooms" ng-model = "vm.property.Bathrooms" required>
                     </div>
 
+                    <!--number of bedrooms-->
                     <div class="col">
-                        <input type="text" class="form-control" placeholder="Listing Price">
+                        <input type="number" class="form-control" placeholder="Bedrooms" ng-model = "vm.property.Bedrooms" required>
                     </div>
 
                 </div>
@@ -181,21 +183,18 @@
 
                 <div class="row">
 
-                    <!--listing type--->
+                    <!--listing Price-->
                     <div class="col">
-                        <select id="inputState" class="form-control">
-                            <option selected>Bedrooms</option>
-                            <option>...</option>
-                            <option>...</option>
-                        </select>
+                        <input type="number" class="form-control" placeholder="Listing Price in USD" ng-model = "vm.property.ListingPrice" required>
                     </div>
+                  
 
                     <!--location-->
                     <div class="col">
-                        <select id="inputState" class="form-control">
-                            <option selected>Parking Lots</option>
-                            <option>...</option>
-                            <option>...</option>
+                        <select id="inputState" class="form-control" ng-model = "vm.property.Parking"  required >
+                            <option value = "">---Parking--- </option>
+                            <option value = "Street" >Street Parking</option>
+                            <option value = "Assigned" >Assigned Parking</option>
                         </select>
                     </div>
 
@@ -206,11 +205,11 @@
                 <div class="row">
 
                     <div class="col">
-                        <input type="text" class="form-control" placeholder="Construction Sqft">
+                        <input type="text" class="form-control" placeholder="Building Sqft" ng-model = "vm.property.BuildingSqft" required >
                     </div>
 
                     <div class="col">
-                        <input type="text" class="form-control" placeholder="Land Sqft">
+                        <input type="text" class="form-control" placeholder="Land Sqft" ng-model = "vm.property.LandSqft" required >
                     </div>
 
                 </div>
@@ -220,7 +219,7 @@
                 <div class="row row1">
 
                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"
-                        placeholder="Listing Description"></textarea>
+                        placeholder="Listing Description" ng-model = "vm.property.description" required ></textarea>
 
                 </div>
 
