@@ -92,6 +92,19 @@
         <!-----------div holding the forms-------->
         <div class="forms">
 
+            <!--div to show selected images and videos-->
+
+            <div class="images">
+                <input type="file" id="file" multiple accept='image/*' required>
+                <label for="file">upload here...................</label>
+
+                <p class="imgt" id="imgt">Upload your property pictures here</p>
+
+                <div class="iver">
+                    <i class="fa fa-circle-o-notch fa-spin" id="spin"></i>
+                </div>
+            </div>
+
             <!--------client info section------------>
             <form>
 
@@ -99,12 +112,16 @@
 
                 <br>
 
+                <p class="error"></p>
+
                 <div class="row">
                     <div class="col">
-                        <input type="text" class="form-control" placeholder="Enter Your Full Name" ng-model = "vm.client.name" required>
+                        <input type="text" class="form-control" placeholder="Enter Your Full Name"
+                            ng-model="vm.client.Name" required>
                     </div>
                     <div class="col">
-                        <input type="text" class="form-control" placeholder="Email Address" ng-model = "vm.client.email" required>
+                        <input type="Email" class="form-control" placeholder="Email Address" ng-model="vm.client.Email"
+                            required>
                     </div>
                 </div>
 
@@ -112,7 +129,8 @@
 
                 <div class="row">
                     <div class="col">
-                        <input type="text" class="form-control" placeholder="Your Phone Number" ng-model = "vm.client.phone" required>
+                        <input type="text" class="form-control" placeholder="Your Phone Number"
+                            ng-model="vm.client.Phone">
                     </div>
                 </div>
 
@@ -126,20 +144,28 @@
 
                 <br>
 
+                <p class="error2"></p>
+
                 <div class="row">
                     <div class="col">
-                        <input type="text" class="form-control" placeholder="Listing Title" ng-model = "vm.property.title">
+                        <input type="text" class="form-control" placeholder="Listing Title"
+                            ng-model="vm.property.Title">
                     </div>
 
                     <!--property type-->
                     <div class="col">
-                        <select id="PropertyType" class="form-control" ng-model = "vm.property.PropertyType" required>
-                            <option value = "" >--Property type--</option>
-                            <option value = "Commercial" >Commercial</option>
-                            <option value = "Residential" > Residential</option>
+                        <select id="PropertyType" class="form-control" ng-model="vm.property.PropertyType" required>
+                            <option value="">--Property type--</option>
+                            <option value="Commercial">Commercial</option>
+                            <option value="Residential"> Residential</option>
+                            <option value="Single family Home">Single Family Home</option>
+                            <option value="Duplex">Duplex </option>
+                            <option value="Triplex">Triplex </option>
+                            <option value="fourplex">Fourplex </option>
+
                         </select>
                     </div>
-                    
+
                 </div>
 
                 <br>
@@ -148,16 +174,17 @@
 
                     <!--listing type--->
                     <div class="col">
-                        <select id="inputState" class="form-control" ng-model = "vm.property.ListingType" required>
-                            <option value = "" >---Listing Type---</option>
-                            <option>Rent</option>
-                            <option>Sell</option>
+                        <select id="inputState" class="form-control" ng-model="vm.property.ListingType" required>
+                            <option value="">---Listing Type---</option>
+                            <option>For Rent</option>
+                            <option>For Sell</option>
                         </select>
                     </div>
 
                     <!--location-->
                     <div class="col">
-                        <input type="text" class="form-control" placeholder="Location" ng-model = "vm.property.Location" required>
+                        <input type="text" class="form-control" placeholder="Location" ng-model="vm.property.Location"
+                            required>
                     </div>
 
                 </div>
@@ -169,12 +196,14 @@
 
                     <!--Number of bathrooms--->
                     <div class="col">
-                        <input type="number" class="form-control" placeholder="Bathrooms" ng-model = "vm.property.Bathrooms" required>
+                        <input type="number" class="form-control" placeholder="Bathrooms"
+                            ng-model="vm.property.Bathrooms" required>
                     </div>
 
                     <!--number of bedrooms-->
                     <div class="col">
-                        <input type="number" class="form-control" placeholder="Bedrooms" ng-model = "vm.property.Bedrooms" required>
+                        <input type="number" class="form-control" placeholder="Bedrooms" ng-model="vm.property.Bedrooms"
+                            required>
                     </div>
 
                 </div>
@@ -185,16 +214,17 @@
 
                     <!--listing Price-->
                     <div class="col">
-                        <input type="number" class="form-control" placeholder="Listing Price in USD" ng-model = "vm.property.ListingPrice" required>
+                        <input type="number" class="form-control" placeholder="Listing Price in USD"
+                            ng-model="vm.property.ListingPrice" required>
                     </div>
-                  
+
 
                     <!--location-->
                     <div class="col">
-                        <select id="inputState" class="form-control" ng-model = "vm.property.Parking"  required >
-                            <option value = "">---Parking--- </option>
-                            <option value = "Street" >Street Parking</option>
-                            <option value = "Assigned" >Assigned Parking</option>
+                        <select id="inputState" class="form-control" ng-model="vm.property.Parking" required>
+                            <option value="">---Parking--- </option>
+                            <option value="Street parking">Street Parking</option>
+                            <option value="Assigned Parking">Assigned Parking</option>
                         </select>
                     </div>
 
@@ -205,11 +235,13 @@
                 <div class="row">
 
                     <div class="col">
-                        <input type="text" class="form-control" placeholder="Building Sqft" ng-model = "vm.property.BuildingSqft" required >
+                        <input type="text" class="form-control" placeholder="Building Sqft"
+                            ng-model="vm.property.BuildingSqft" required>
                     </div>
 
                     <div class="col">
-                        <input type="text" class="form-control" placeholder="Land Sqft" ng-model = "vm.property.LandSqft" required >
+                        <input type="text" class="form-control" placeholder="Land Sqft" ng-model="vm.property.LandSqft"
+                            required>
                     </div>
 
                 </div>
@@ -219,7 +251,7 @@
                 <div class="row row1">
 
                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"
-                        placeholder="Listing Description" ng-model = "vm.property.description" required ></textarea>
+                        placeholder="Listing Description" ng-model="vm.property.description" required></textarea>
 
                 </div>
 
@@ -236,29 +268,33 @@
 
                 <div class="col">
                     <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                        <label class="form-check-label" for="exampleCheck1">Garden</label>
+                        <input type="checkbox" class="form-check-input" value="Outdoor area"
+                            ng-model="vm.amenities.outdoor" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Outdoor area</label>
                     </div>
                 </div>
 
                 <div class="col">
                     <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <input type="checkbox" class="form-check-input" value="pool" ng-model="vm.amenities.pool"
+                            id="exampleCheck1">
                         <label class="form-check-label" for="exampleCheck1">Pool</label>
                     </div>
                 </div>
 
                 <div class="col">
                     <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <input type="checkbox" class="form-check-input" value="vigilance"
+                            ng-model="vm.amenities.vigilance" id="exampleCheck1">
                         <label class="form-check-label" for="exampleCheck1">Vigilance</label>
                     </div>
                 </div>
 
                 <div class="col">
                     <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                        <label class="form-check-label" for="exampleCheck1">Laundry</label>
+                        <input type="checkbox" class="form-check-input" value="Laundry" ng-model="vm.amenities.Laundry"
+                            id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Laundry in unite</label>
                     </div>
                 </div>
 
@@ -270,28 +306,32 @@
 
                 <div class="col">
                     <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <input type="checkbox" class="form-check-input" value="Security cameras"
+                            ng-model="vm.amenities.SecurityCameras" id="exampleCheck1">
                         <label class="form-check-label" for="exampleCheck1">Security cameras</label>
                     </div>
                 </div>
 
                 <div class="col">
                     <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                        <label class="form-check-label" for="exampleCheck1">Video Survelliance</label>
+                        <input type="checkbox" class="form-check-input" value="Pets" ng-model="vm.amenities.Pets"
+                            id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Pets</label>
                     </div>
                 </div>
 
                 <div class="col">
                     <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <input type="checkbox" class="form-check-input" value="Dish Washer"
+                            ng-model="vm.amenities.DishWasher" id="exampleCheck1">
                         <label class="form-check-label" for="exampleCheck1">Dish Washer</label>
                     </div>
                 </div>
 
                 <div class="col">
                     <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <input type="checkbox" class="form-check-input" value="Internet"
+                            ng-model="vm.amenities.Internet" id="exampleCheck1">
                         <label class="form-check-label" for="exampleCheck1">Internet</label>
                     </div>
                 </div>
@@ -304,28 +344,32 @@
 
                 <div class="col">
                     <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <input type="checkbox" class="form-check-input" value="Elevator"
+                            ng-model="vm.amenities.Elevator" id="exampleCheck1">
                         <label class="form-check-label" for="exampleCheck1">Elevator</label>
                     </div>
                 </div>
 
                 <div class="col">
                     <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <input type="checkbox" class="form-check-input" value="Jacuzzi" ng-model="vm.amenities.Jacuzzi"
+                            id="exampleCheck1">
                         <label class="form-check-label" for="exampleCheck1">Jacuzzi</label>
                     </div>
                 </div>
 
                 <div class="col">
                     <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <input type="checkbox" class="form-check-input" value="Solar Panel"
+                            ng-model="vm.amenities.solar" id="exampleCheck1">
                         <label class="form-check-label" for="exampleCheck1">Solar Panel</label>
                     </div>
                 </div>
 
                 <div class="col">
                     <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <input type="checkbox" class="form-check-input" value="Garage" ng-model="vm.amenities.garage"
+                            id="exampleCheck1">
                         <label class="form-check-label" for="exampleCheck1">Garage</label>
                     </div>
                 </div>
@@ -334,7 +378,7 @@
 
             <br><br>
 
-            <button type="button" class="btn btn-primary btn-lg">Submit for approval</button>
+            <button type="button" id="sbtf" class="btn btn-primary btn-lg">Submit my Property</button>
 
 
         </div>
