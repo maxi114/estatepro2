@@ -4,8 +4,12 @@ const bodyParser = require('body-parser');
 const dotenv = require('dotenv');//store the secret 
 const mongoose = require('mongoose');
 
+
 const app = express();
 
+
+//load in the router
+const router = require('./router/post.js')
 
 //files to use
 app.use(bodyParser.json());
@@ -14,6 +18,8 @@ app.use(express.static(__dirname + '/public'))
 app.use(express.static(__dirname+ '/public/controller'))
 app.use('/node_modules', express.static(__dirname + '/node_modules'));
 
+//router to use
+app.use('/post', router);
 
 //db connection string
 //const db = "mongodb://db:27017/estatpro"

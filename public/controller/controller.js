@@ -150,6 +150,7 @@
         $("#sbtf").on("click", () => {
 
 
+
             $(".error").html("")
             $(".error2").html("")
 
@@ -176,80 +177,104 @@
             //------------------validate property info-------------
 
             //check to see if property info is filled out
-            if (!vm.property) {
-                $(".error2").html("Please fill out your property information below.")
-                return
+            /* if (!vm.property) {
+                 $(".error2").html("Please fill out your property information below.")
+                 return
+             }
+ 
+             //if property title is not filled out
+             if (!vm.property.Title) {
+                 $(".error2").html("Please fill out your property title below.")
+                 return
+             }
+ 
+             //if property type is not filled
+             if (!vm.property.PropertyType) {
+                 $(".error2").html("Please select your property type below.")
+                 return
+             }
+ 
+             //if property listing is not selected
+             if (!vm.property.ListingType) {
+                 $(".error2").html("Please select your listing type below.")
+                 return
+             }
+ 
+             //if property location is not filled
+             if (!vm.property.Location) {
+                 $(".error2").html("Please fill out your property Location below.")
+                 return
+             }
+ 
+             //if number of bathrooms is not filled
+             if (!vm.property.Bathrooms) {
+                 $(".error2").html("Fill out the number of bathrooms in the property below.")
+                 return
+             }
+ 
+             //if number of bedrooms is not filled
+             if (!vm.property.Bedrooms) {
+                 $(".error2").html("Please fill out the number of bedrooms below.")
+                 return
+             }
+ 
+             //if listing price is missing
+             if (!vm.property.ListingPrice) {
+                 $(".error2").html("Please fill out your Listing price below.")
+                 return
+             }
+ 
+             //if parking info is missing
+             if (!vm.property.Parking) {
+                 $(".error2").html("Please fill out the parking information below.")
+                 return
+             }
+ 
+             //if building sqft is missing
+             if (!vm.property.BuildingSqft) {
+                 $(".error2").html("Please fill out your property SQFT information below.")
+                 return
+             }
+ 
+             //if land sqft is missing
+             if (!vm.property.LandSqft) {
+                 $(".error2").html("Please fill out the lands SQFt below.")
+                 return
+             }
+ 
+             //if property description is missing
+             if (!vm.property.description) {
+                 $(".error2").html("Please fill out the property description below.")
+                 return
+             }*/
+
+            var formData = new FormData();
+
+            // Append each file to the FormData object
+            for (var i = 0; i < myFiles.length; i++) {
+                formData.append(vm.client.Email + "," + vm.property.Title, myFiles[i]);
             }
 
-            //if property title is not filled out
-            if (!vm.property.Title) {
-                $(".error2").html("Please fill out your property title below.")
-                return
-            }
+            // Append other data to the FormData object
+            formData.append('client', JSON.stringify(vm.client));
+            formData.append('property', JSON.stringify(vm.property));
+            formData.append('amenities', JSON.stringify(vm.amenities));
 
-            //if property type is not filled
-            if (!vm.property.PropertyType) {
-                $(".error2").html("Please select your property type below.")
-                return
-            }
 
-            //if property listing is not selected
-            if (!vm.property.ListingType) {
-                $(".error2").html("Please select your listing type below.")
-                return
-            }
-
-            //if property location is not filled
-            if (!vm.property.Location) {
-                $(".error2").html("Please fill out your property Location below.")
-                return
-            }
-
-            //if number of bathrooms is not filled
-            if (!vm.property.Bathrooms) {
-                $(".error2").html("Fill out the number of bathrooms in the property below.")
-                return
-            }
-
-            //if number of bedrooms is not filled
-            if (!vm.property.Bedrooms) {
-                $(".error2").html("Please fill out the number of bedrooms below.")
-                return
-            }
-
-            //if listing price is missing
-            if (!vm.property.ListingPrice) {
-                $(".error2").html("Please fill out your Listing price below.")
-                return
-            }
-
-            //if parking info is missing
-            if (!vm.property.Parking) {
-                $(".error2").html("Please fill out the parking information below.")
-                return
-            }
-
-            //if building sqft is missing
-            if (!vm.property.BuildingSqft) {
-                $(".error2").html("Please fill out your property SQFT information below.")
-                return
-            }
-
-            //if land sqft is missing
-            if (!vm.property.LandSqft) {
-                $(".error2").html("Please fill out the lands SQFt below.")
-                return
-            }
-
-            //if property description is missing
-            if (!vm.property.description) {
-                $(".error2").html("Please fill out the property description below.")
-                return
-            }
-
-            console.log(vm.client)
-            console.log(vm.property)
-            console.log(vm.amenities)
+            console.log(...formData)
+            //send the data to the router
+            $http.post('/post/upload', formData, {
+                transformRequest: angular.identity,
+                headers: { 'Content-Type': undefined }
+            })
+                .then(function (response) {
+                    // Handle the response
+                    console.log('Files and data uploaded successfully', response.data);
+                })
+                .catch(function (error) {
+                    // Handle the error
+                    console.error('Error uploading files and data', error);
+                });
         })
 
     }
