@@ -32,11 +32,11 @@ mongoose.connect(db)
     })
 
 mongoose.connection.on('disconnected', function () {
-    console.log('succesfull disconnected from' + db);
+    console.log('succesfull disconnected from ' + db);
 })
 
 mongoose.connection.on('error', function () {
-    console.log('an error has occured to' + db);
+    console.log('an error has occured to ' + db);
 });
 
 

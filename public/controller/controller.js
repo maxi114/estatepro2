@@ -27,6 +27,13 @@
             controllerAs: "vm",
         })
 
+        //properties page
+        $routeProvider.when('/properties', {
+            templateUrl: "./property.html",
+            controller: "PropertyController",
+            controllerAs: "vm",
+        })
+
     });
 
     //home controller
@@ -42,6 +49,94 @@
     function AboutController($location, $scope, $window, $http) {
 
         var vm = this
+
+    }
+
+    //properties controller
+    app.controller("PropertyController", PropertyController);
+    function PropertyController($location, $scope, $window, $http) {
+
+        var vm = this
+
+        //route to get all the properties from the database
+        $http.post('/post/properties', {
+            DataSend: "get posted properties"
+        })
+            .then((response) => {
+
+                const data = response.data
+
+                console.log(data)
+                //array to store images
+                var images = [];
+
+                //loop through the data
+                for (var i = 0; i < data.length; i++) {
+
+                    //loop through the images
+                    for (var p = 0; p < data[i].filepath.length; p++) {
+                        //store the images in an array
+                        images.push(
+                            "<div class=\"carousel-item active\">" +
+                            "<img src=\"./PropertyImages/mokodi114@gmail.com,Test1,1697241461985.png\" class=\"d-block w-100\" alt=\"...\">" +
+                            "</div>"
+                        );
+
+                    }
+
+                    images = images.join("")
+                    console.log(images)
+                    //Send the data to client side for viewing
+                    $(
+                        "<div class =\"card\" style =\"width: 100%; border: none;\" >" +
+                        "<div id=\"carouselExampleIndicators\" class=\"carousel slide\">" +
+                        "<div class=\"card-img-top carousel-inner\">" +
+                        images +
+                        "</div>" +
+                        "</div>"+
+                        " <button class=\"carousel-control-prev\" type=\"button\" data-bs-target=\"#carouselExampleIndicators\" data-bs-slide=\"prev\">" +
+                        "<span class=\"carousel-control-prev-icon\" aria-hidden=\"true\"></span>" +
+                        "<span class=\"visually-hidden\">Previous</span>" +
+                        "</button>" +
+                        "<button class=\"carousel-control-next\" type=\"button\" data-bs-target=\"#carouselExampleIndicators\" data-bs-slide=\"next\">" +
+                        "<span class=\"carousel-control-next-icon\" aria-hidden=\"true\"></span>" +
+                        "<span class=\"visually-hidden\">Next</span>" +
+                        "</button>" +
+                        "</div>" +
+                        " <div class=\"card-body\">" +
+
+                        "<div class=\"line2\"></div>" +
+
+                        "<h5 class=\"card-title\">$ " + data[i].dataaa.ListingPrice + "</h5>" +
+                        "<p class=\"card-text\">Home in " + data[i].dataaa.Location + "</p>" +
+
+                        "<div class=\"line3\"></div>" +
+
+                        " <div class=\"card-body row align-items-center\">" +
+                        "<div class=\"card-link\">" +
+                        "<img src=\"./images/sqftimg.png\" class = \"linkimg\" alt=\"\" srcset=\"\">" +
+                        "<p class = \"linktxt\"> "+data[i].dataaa.BuildingSqft+" sqft </p>" +
+                        "</div>:" +
+
+                        "<div class=\"card-link\">" +
+                        "<img src=\"./images/bermimg.png\" class = \"linkimg linkimg1\" alt=\"\" srcset=\"\">" +
+                        "<p class = \"linktxt linktxt1\"> "+data[i].dataaa.Bathrooms+" </p>" +
+                        "</div>" +
+
+                        "<div class=\"card-link\">" +
+                        "<img src=\"./images/bahroomimg.png\" class = \"linkimg linkimg1\" alt=\"\" srcset=\"\">" +
+                        "<p class = \"linktxt linktxt1\"> "+data[i].dataaa.Bedrooms+" </p>" +
+                        "</div>" +
+                        "</div>" +
+
+                        "</div>" +
+                        "</div>"
+                    ).appendTo(".left3")
+
+                    images = []
+                }
+
+            })
 
     }
 
@@ -153,6 +248,7 @@
 
             $(".error").html("")
             $(".error2").html("")
+            $(".error1").html("")
 
             //----------------validate client info--------------------
 
@@ -177,76 +273,83 @@
             //------------------validate property info-------------
 
             //check to see if property info is filled out
-            /* if (!vm.property) {
-                 $(".error2").html("Please fill out your property information below.")
-                 return
-             }
- 
-             //if property title is not filled out
-             if (!vm.property.Title) {
-                 $(".error2").html("Please fill out your property title below.")
-                 return
-             }
- 
-             //if property type is not filled
-             if (!vm.property.PropertyType) {
-                 $(".error2").html("Please select your property type below.")
-                 return
-             }
- 
-             //if property listing is not selected
-             if (!vm.property.ListingType) {
-                 $(".error2").html("Please select your listing type below.")
-                 return
-             }
- 
-             //if property location is not filled
-             if (!vm.property.Location) {
-                 $(".error2").html("Please fill out your property Location below.")
-                 return
-             }
- 
-             //if number of bathrooms is not filled
-             if (!vm.property.Bathrooms) {
-                 $(".error2").html("Fill out the number of bathrooms in the property below.")
-                 return
-             }
- 
-             //if number of bedrooms is not filled
-             if (!vm.property.Bedrooms) {
-                 $(".error2").html("Please fill out the number of bedrooms below.")
-                 return
-             }
- 
-             //if listing price is missing
-             if (!vm.property.ListingPrice) {
-                 $(".error2").html("Please fill out your Listing price below.")
-                 return
-             }
- 
-             //if parking info is missing
-             if (!vm.property.Parking) {
-                 $(".error2").html("Please fill out the parking information below.")
-                 return
-             }
- 
-             //if building sqft is missing
-             if (!vm.property.BuildingSqft) {
-                 $(".error2").html("Please fill out your property SQFT information below.")
-                 return
-             }
- 
-             //if land sqft is missing
-             if (!vm.property.LandSqft) {
-                 $(".error2").html("Please fill out the lands SQFt below.")
-                 return
-             }
- 
-             //if property description is missing
-             if (!vm.property.description) {
-                 $(".error2").html("Please fill out the property description below.")
-                 return
-             }*/
+            if (!vm.property) {
+                $(".error2").html("Please fill out your property information below.")
+                return
+            }
+
+            //if property title is not filled out
+            if (!vm.property.Title) {
+                $(".error2").html("Please fill out your property title below.")
+                return
+            }
+
+            //if property type is not filled
+            if (!vm.property.PropertyType) {
+                $(".error2").html("Please select your property type below.")
+                return
+            }
+
+            //if property listing is not selected
+            if (!vm.property.ListingType) {
+                $(".error2").html("Please select your listing type below.")
+                return
+            }
+
+            //if property location is not filled
+            if (!vm.property.Location) {
+                $(".error2").html("Please fill out your property Location below.")
+                return
+            }
+
+            //if number of bathrooms is not filled
+            if (!vm.property.Bathrooms) {
+                $(".error2").html("Fill out the number of bathrooms in the property below.")
+                return
+            }
+
+            //if number of bedrooms is not filled
+            if (!vm.property.Bedrooms) {
+                $(".error2").html("Please fill out the number of bedrooms below.")
+                return
+            }
+
+            //if listing price is missing
+            if (!vm.property.ListingPrice) {
+                $(".error2").html("Please fill out your Listing price below.")
+                return
+            }
+
+            //if parking info is missing
+            if (!vm.property.Parking) {
+                $(".error2").html("Please fill out the parking information below.")
+                return
+            }
+
+            //if building sqft is missing
+            if (!vm.property.BuildingSqft) {
+                $(".error2").html("Please fill out your property SQFT information below.")
+                return
+            }
+
+            //if land sqft is missing
+            if (!vm.property.LandSqft) {
+                $(".error2").html("Please fill out the lands SQFt below.")
+                return
+            }
+
+            //if property description is missing
+            if (!vm.property.description) {
+                $(".error2").html("Please fill out the property description below.")
+                return
+            }
+
+
+            //chek if there are images
+            if (myFiles.length == 0) {
+                $(".error1").html("Please upload images of your property.")
+                return
+            }
 
             var formData = new FormData();
 
@@ -261,7 +364,6 @@
             formData.append('amenities', JSON.stringify(vm.amenities));
 
 
-            console.log(...formData)
             //send the data to the router
             $http.post('/post/upload', formData, {
                 transformRequest: angular.identity,
@@ -269,11 +371,11 @@
             })
                 .then(function (response) {
                     // Handle the response
-                    console.log('Files and data uploaded successfully', response.data);
+                    console.log(response.data);
                 })
                 .catch(function (error) {
                     // Handle the error
-                    console.error('Error uploading files and data', error);
+                    console.error(error);
                 });
         })
 

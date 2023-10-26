@@ -25,6 +25,7 @@ const ImageSchema = new Schema({
     Filename:{
         type: String,
         required: true,
+        unique: true,
     }
 
 })

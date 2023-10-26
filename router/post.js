@@ -33,6 +33,68 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage: storage });
 
+//route to fetch all the uploaded properties
+router.post("/properties", ((req, res) => {
+
+
+    //array to store the data and images path
+    const dat = [];
+
+    //function to get all the images path
+    const images = async (email, title, dataa, length, p) => {
+
+        //store the data along with its pictures
+        const datta = {
+            dataaa: {},
+            filepath: [],
+        }
+
+        //find images with the same email and title
+        Image.find({ Email: email, PropertyTile: title })
+            .then(data => {
+
+                //loop through the data
+                for (var i = 0; i < data.length; i++) {
+
+                    datta.dataaa = dataa;
+                    datta.filepath.push(data[i].Path)
+
+                }
+
+                //push the datta to dat
+                dat.push(datta);
+
+                if (p + 1 == length) {
+                    res.send(dat)
+                }
+
+            })
+
+
+    }
+
+    //get all the properties from the data base
+    Property.find({})
+        .then(data => {
+
+            const getdata = async () => {
+                //loop through the data
+                for (var i = 0; i < data.length; i++) {
+                    //console.log("Emiail: " + data[i].Email + " PropertyTitlte: " + data[i].Title)
+                    await images(data[i].Email, data[i].Title, data[i], data.length, i)
+
+
+                }
+
+
+
+            }
+
+            getdata()
+        })
+
+}))
+
 //route to upload the property information
 router.post("/upload", upload.any(), ((req, res) => {
 
@@ -61,90 +123,216 @@ router.post("/upload", upload.any(), ((req, res) => {
         for (var i = 0; i < file.length; i++) {
 
             fs.unlink(file[i], (err) => {
-                if (err) {
-                    console.log(err)
-                }
-                else {
-                    console.log("deleted")
-                }
             })
+        }
+
+    }
+
+    //get the property schema
+    const propertyy = new Property();
+
+    //function to save property info
+    const PropertyInfo = (propertyy) => {
+
+
+        //upload the property info to the database
+        propertyy.Email = client.Email;
+        propertyy.Title = property.Title;
+        propertyy.PropertyType = property.PropertyType;
+        propertyy.ListingType = property.ListingType;
+        propertyy.Location = property.Location;
+        propertyy.Bathrooms = property.Bathrooms;
+        propertyy.Bedrooms = property.Bedrooms;
+        propertyy.ListingPrice = property.ListingPrice;
+        propertyy.Parking = property.Parking;
+        propertyy.BuildingSqft = property.BuildingSqft;
+        propertyy.LandSqft = property.LandSqft;
+        propertyy.ListingDescription = property.description;
+
+        //check if property provides amenities
+        if (amenities.outdoor) {
+            propertyy.Amenities.Outdoor = true
+        }
+        else {
+            propertyy.Amenities.Outdoor = false
+        }
+
+        //if statement for pool
+        if (amenities.pool) {
+            propertyy.Amenities.Pool = true
+        }
+        else {
+            propertyy.Amenities.Pool = false
+        }
+
+        //if statement for vigilance
+        if (amenities.vigilance) {
+            propertyy.Amenities.Vigilance = true
+        }
+        else {
+            propertyy.Amenities.Vigilance = false
+        }
+
+        //if statement for laundry
+        if (amenities.Laundry) {
+            propertyy.Amenities.Laundry = true
+        }
+        else {
+            propertyy.Amenities.Laundry = false
+        }
+
+        //if statement for security cameras
+        if (amenities.SecurityCameras) {
+            propertyy.Amenities.SecurityCamera = true
+        }
+        else {
+            propertyy.Amenities.SecurityCamera = false
+        }
+
+        //if statement for pets
+        if (amenities.Pets) {
+            propertyy.Amenities.Pets = true
+        }
+        else {
+            propertyy.Amenities.Pets = false
+        }
+
+        //if statement for dishwasher
+        if (amenities.DishWasher) {
+            propertyy.Amenities.DishWasher = true
+        }
+        else {
+            propertyy.Amenities.DishWasher = false
+        }
+
+        //if statement for Internet
+        if (amenities.Internet) {
+            propertyy.Amenities.Internet = true
+        }
+        else {
+            propertyy.Amenities.Internet = false
+        }
+
+        //if statement for Elevator
+        if (amenities.Elevator) {
+            propertyy.Amenities.Elevator = true
+        }
+        else {
+            propertyy.Amenities.Elevator = false
+        }
+
+        //if statement for Jacuzzi
+        if (amenities.Jacuzzi) {
+            propertyy.Amenities.Jacuzzi = true
+        }
+        else {
+            propertyy.Amenities.Jacuzzi = false
+        }
+
+        //if statement for solar
+        if (amenities.solar) {
+            propertyy.Amenities.Solar = true
+        }
+        else {
+            propertyy.Amenities.Solar = false
+        }
+
+        //if statement for garage
+        if (amenities.garage) {
+            propertyy.Amenities.Garage = true
+        }
+        else {
+            propertyy.Amenities.Garage = false
+        }
+
+    }
+
+    //function to save the images information
+    const imageinfo = () => {
+
+        //loop through the uploaded images
+        for (var i = 0; i < uploadedFiles.length; i++) {
+            //new image upload schema
+            const image = new Image();
+
+            image.Email = client.Email
+            image.PropertyTile = property.Title
+            image.Path = uploadedFiles[i].path;
+            image.Filename = uploadedFiles[i].filename
+
+            image.save()
         }
     }
 
-    //call the delete files function
-    delfile(upfiles)
-
     //check if client exists
-    Client.find({Email: client.Email})
-    .then(data =>{
+    Client.find({ Email: client.Email })
+        .then(data => {
 
-        //if client does not exists
-        if(data.length > 0){
+            //if client does not exists
+            if (data.length == 0) {
 
-            //get the client schema
-            const clientt = new Client();
 
-            //upload client info to database
-            clientt.Name = client.Name;
-            clientt.Email = client.Email;
-            clientt.Phone = client.Phone;
+                //get the client schema
+                const clientt = new Client();
 
-            //get the property schema
-            const propertyy = new Property();
+                //upload client info to database
+                clientt.Name = client.Name;
+                clientt.Email = client.Email;
+                clientt.Phone = client.Phone;
 
-            //upload the property info to the database
-            propertyy.Email = client.Email;
-            propertyy.Title = property.Title;
-            propertyy.PropertyType = property.PropertyType;
-            propertyy.ListingType = property.ListingType;
-            propertyy.Location = property.Location;
-            propertyy.Bathrooms = property.Bathrooms;
-            property.Bedrooms = property.Bedrooms;
-            propertyy.ListingPrice = property.ListingPrice;
-            propertyy.Parking = property.Parking;
-            propertyy.BuildingSqft = property.BuildingSqft;
-            propertyy.LandSqft = property.LandSqft;
-            propertyy.ListingDescription = property.ListingDescription;
+                //call the function to input the property information
+                PropertyInfo(propertyy)
 
-            //check if property provides amenities
-            if(amenities.outdoor == TRUE){
-                propertyy.Amenities.Outdoor = TRUE
+                //save the client info
+                clientt.save()
+                    .then(document => {
+
+                        //call the funtion to saave the image info
+                        imageinfo()
+
+                        //save the property info
+                        propertyy.save()
+
+                        res.send("success")
+
+                    })
+
+
             }
-            else{}
 
-            propertyy.Amenities.Outdoor = amenities.outdoor
-            propertyy.Amenities.Pool = amenities.pool
-            propertyy.Amenities.Vigilance = amenities.vigilance
-            propertyy.Amenities.Laundry = amenities.Laundry
-            propertyy.Amenities.SecurityCameras = amenities.SecurityCameras
-            propertyy.Amenities.Pets = amenities.Pets
-            propertyy.Amenities.DishWasher = amenities.DishWasher
-            propertyy.Amenities.Internet = amenities.Internet
-            propertyy.Amenities.Elevator = amenities.Elevator
-            propertyy.Amenities.Jacuzzi = amenities.Jacuzzi
-            propertyy.Amenities.Solar = amenities.solar
-            propertyy.Amenities.Garage = amenities.garage
+            //if client exists
+            else {
 
-            propertyy.save(function (err, document){
-                if(document){
-                    console.log(document)
-                }
-                else{
-                    console.log(err)
-                }
-            })
-        }
+                //check if property exists
 
-        //if client exists
-        else{
+                Property.find({ Email: client.Email, Title: property.Title })
+                    .then(data => {
 
-        }
-    })
-    // Add your logic to process the files and data
-    /*console.log('Files received:', uploadedFiles);
-    console.log('Client data:', client);
-    console.log('Property data:', property);
-    console.log('Amenities data:', amenities);*/
+                        //if client does not have the property
+                        if (data.length == 0) {
+
+                            //call the funtion to saave the image info
+                            imageinfo()
+
+                            //call the function to input the property information
+                            PropertyInfo(propertyy)
+
+                            //save the property
+                            propertyy.save();
+
+                            res.send("Success")
+                        }
+                        //if client already has the property
+                        else {
+                            //call the delete files function
+                            delfile(upfiles)
+                            res.send("property already exists for this client")
+                        }
+
+                    })
+
+            }
+        })
 
 }))
 
