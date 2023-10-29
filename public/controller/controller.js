@@ -66,7 +66,6 @@
 
                 const data = response.data
 
-                console.log(data)
                 //array to store images
                 var images = [];
 
@@ -75,50 +74,66 @@
 
                     //loop through the images
                     for (var p = 0; p < data[i].filepath.length; p++) {
+
+                        console.log(data[i].filepath[p])
+                        if(p == 0){
+                            //store the images in an array
+                            images.push(
+                                "<div class=\"carousel-item active\">" +
+                                "<img src=\"./"+data[i].filepath[p]+"\" class=\"d-block w-100\" alt=\"...\">" +
+                                "</div>"
+                            );
+                        }
+
+                        else{
+                            //store the images in an array
+                            images.push(
+                                "<div class=\"carousel-item\">" +
+                                "<img src=\"./"+data[i].filepath[p]+"\" class=\"d-block w-100\" alt=\"...\">" +
+                                "</div>"
+                            );
+                        }
+
                         //store the images in an array
-                        images.push(
-                            "<div class=\"carousel-item active\">" +
-                            "<img src=\"./PropertyImages/mokodi114@gmail.com,Test1,1697241461985.png\" class=\"d-block w-100\" alt=\"...\">" +
-                            "</div>"
-                        );
+                       
 
                     }
 
                     images = images.join("")
-                    console.log(images)
                     //Send the data to client side for viewing
                     $(
+                        "<div class = \"hld\">"+
                         "<div class =\"card\" style =\"width: 100%; border: none;\" >" +
-                        "<div id=\"carouselExampleIndicators\" class=\"carousel slide\">" +
+                        "<div id=\"carouselExampleIndicators"+i+"\" class=\"carousel slide\">" +
                         "<div class=\"card-img-top carousel-inner\">" +
                         images +
                         "</div>" +
                         "</div>"+
-                        " <button class=\"carousel-control-prev\" type=\"button\" data-bs-target=\"#carouselExampleIndicators\" data-bs-slide=\"prev\">" +
+                        " <button class=\"carousel-control-prev\" type=\"button\" data-bs-target=\"#carouselExampleIndicators"+i+"\" data-bs-slide=\"prev\">" +
                         "<span class=\"carousel-control-prev-icon\" aria-hidden=\"true\"></span>" +
                         "<span class=\"visually-hidden\">Previous</span>" +
                         "</button>" +
-                        "<button class=\"carousel-control-next\" type=\"button\" data-bs-target=\"#carouselExampleIndicators\" data-bs-slide=\"next\">" +
+                        "<button class=\"carousel-control-next\" type=\"button\" data-bs-target=\"#carouselExampleIndicators"+i+"\" data-bs-slide=\"next\">" +
                         "<span class=\"carousel-control-next-icon\" aria-hidden=\"true\"></span>" +
                         "<span class=\"visually-hidden\">Next</span>" +
                         "</button>" +
                         "</div>" +
                         " <div class=\"card-body\">" +
-
-                        "<div class=\"line2\"></div>" +
+                        "<br>"+
+                        "<div class=\"line2\" ></div>" +
 
                         "<h5 class=\"card-title\">$ " + data[i].dataaa.ListingPrice + "</h5>" +
                         "<p class=\"card-text\">Home in " + data[i].dataaa.Location + "</p>" +
 
                         "<div class=\"line3\"></div>" +
-
-                        " <div class=\"card-body row align-items-center\">" +
-                        "<div class=\"card-link\">" +
+                        "<br>"+
+                        " <div class=\"card-body row align-items-center\" style = \"margin-left: 3px\" >" +
+                        "<div class=\"card-link\" style=\" margin-right: 30px\">"  +
                         "<img src=\"./images/sqftimg.png\" class = \"linkimg\" alt=\"\" srcset=\"\">" +
                         "<p class = \"linktxt\"> "+data[i].dataaa.BuildingSqft+" sqft </p>" +
-                        "</div>:" +
+                        "</div>" +
 
-                        "<div class=\"card-link\">" +
+                        "<div class=\"card-link\" style=\" margin-right: 30px\">" +
                         "<img src=\"./images/bermimg.png\" class = \"linkimg linkimg1\" alt=\"\" srcset=\"\">" +
                         "<p class = \"linktxt linktxt1\"> "+data[i].dataaa.Bathrooms+" </p>" +
                         "</div>" +
@@ -130,8 +145,9 @@
                         "</div>" +
 
                         "</div>" +
+                        "</div>"+
                         "</div>"
-                    ).appendTo(".left3")
+                    ).appendTo(".divpr")
 
                     images = []
                 }

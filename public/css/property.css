@@ -84,33 +84,27 @@ body {
 
 /*---------------------div holding the properties section---------------------------------------*/
 .propertiess {
-    position: relative;
-    max-width: 1200px;
+    max-width: 1600px;
     margin: auto;
-    height: 1700px;
+    position: relative;
 }
 
-
-
-/*left section*/
-.left3 {
-    position: absolute;
-    width: 45%;
-    left: 15px;
+/*div holding the properties*/
+.divpr {
+    margin-top: 100px;
+    width: 100%;
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
 }
 
-/*right section*/
-.right3 {
-    position: absolute;
-    width: 45%;
-    right: 15px;
-    margin-top: 150px;
+.hld {
+    max-width: 440px;
+    margin: 30px
 }
 
 /*card*/
-.card {
-    margin-top: 50px;
-}
+
 
 .line2 {
     border: 1px solid #070707;
@@ -138,7 +132,6 @@ body {
 .card-link {
     width: 120px;
     height: 35px;
-    margin: 0px;
     position: relative;
     background-color: #F3F3F3;
 }
@@ -151,26 +144,27 @@ body {
     left: 5px;
 }
 
-.linkimg1{
+.linkimg1 {
     left: 40px;
 }
+
 .linktxt {
     color: var(--Neutral-800, #070707);
     font-family: Plus Jakarta Sans;
     font-size: 20px;
     font-style: italic;
-    font-weight: 200;
+    font-weight: 500;
     margin-left: 20px;
 }
 
-.linktxt1{
+.linktxt1 {
     margin-left: 55px
 }
+
 /*-------subscribe to the news letter section*--------*/
 .news {
     position: relative;
     border: solid 1px red;
-
     height: 300px;
     background-color: #F15A29;
     color: white;

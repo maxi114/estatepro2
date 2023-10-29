@@ -22,10 +22,10 @@ const router = express.Router({ caseSensitive: true })
 // Multer configuration
 const storage = multer.diskStorage({
     // Destination to store image     
-    destination: './PropertyImages/',
+    destination: './public/property',
     filename: (req, file, cb) => {
 
-        cb(null, file.fieldname + ',' + Date.now() + path.extname(file.originalname));
+        cb(null,   Date.now() + path.extname(file.originalname));
         // file.fieldname is name of the field (image)
         // path.extname get the uploaded file extension
     },
@@ -98,6 +98,7 @@ router.post("/properties", ((req, res) => {
 //route to upload the property information
 router.post("/upload", upload.any(), ((req, res) => {
 
+
     // Access the uploaded files using req.files
     const uploadedFiles = req.files;
 
@@ -107,12 +108,14 @@ router.post("/upload", upload.any(), ((req, res) => {
     const amenities = JSON.parse(req.body.amenities);
 
     //store the path of the uploaded files in case of deletion
-    upfiles = []
+    var upfiles = []
 
     //loop through the uploaded files and get their path
     for (var i = 0; i < uploadedFiles.length; i++) {
 
-        upfiles.push(uploadedFiles[i].path)
+        var filepath = uploadedFiles[i].path.split("\\").slice(1).join("/")
+
+        upfiles.push(filepath)
 
     }
 
@@ -257,7 +260,7 @@ router.post("/upload", upload.any(), ((req, res) => {
 
             image.Email = client.Email
             image.PropertyTile = property.Title
-            image.Path = uploadedFiles[i].path;
+            image.Path = upfiles[i];
             image.Filename = uploadedFiles[i].filename
 
             image.save()
