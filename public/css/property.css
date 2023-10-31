@@ -338,3 +338,36 @@ footer {
     font-weight: 500;
     text-decoration-line: underline;
 }
+
+
+
+      /* Basic styling for the custom dropdown */
+      .custom-dropdown {
+        position: relative;
+        width: 200px;
+    }
+
+    .custom-dropdown select {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    .custom-dropdown .arrow {
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+    }
+
+    /* Style for the icon in the dropdown */
+    .custom-dropdown .icon-option:before {
+        content: "\e84f"; /* Unicode for the house icon in Material Icons */
+        font-family: 'Material Icons';
+        margin-right: 5px;
+    }
