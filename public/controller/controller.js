@@ -58,6 +58,31 @@
 
         var vm = this
 
+        //when user clicks the property filter
+        $(".pll").on('change', function (){
+            var pr = this.value
+
+            $http.post("/post/filter",{
+                fil: pr
+            })
+            .then((response)=>{
+                console.log(response.data)
+            })
+        })
+
+        //when user clicks the lsting type filter
+        $(".pl").on('change', function() {
+            var ch = this.value
+
+            $http.post("/post/filter",{
+                fil: ch
+            })
+            .then((response)=>{
+                console.log(response.data)
+            })
+
+        })
+
         //route to get all the properties from the database
         $http.post('/post/properties', {
             DataSend: "get posted properties"

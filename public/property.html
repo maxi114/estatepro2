@@ -13,10 +13,10 @@
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
         crossorigin="anonymous"></script>
 
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        
-        <script src = "./js/property.js"></script>
-       
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script src="./js/property.js"></script>
+
     <!---link for google icons-->
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
@@ -83,14 +83,18 @@
 
         </div>
 
+        <br><br><br><br><br><br>
         <!-------div holding the filter bar---->
         <div class="filter">
 
 
             <!--property filter-->
             <div class="pfil">
-                <select id="Property">
-                    <option class="material-symbols-outlined">&#xe88a; Property </option>
+                <span class="material-symbols-outlined" id="icon">
+                    home
+                </span>
+                <select id="Property" class = "pll">
+                    <option value=""> Property </option>
                     <option value="Commercial">Commercial</option>
                     <option value="Residential"> Residential</option>
                     <option value="Single family Home">Single Family Home</option>
@@ -101,19 +105,21 @@
                 </select>
             </div>
 
-            <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <span class="material-symbols-outlined">
-                        home 
-                        </span> Property
-                </button>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
-              </div>
-             
+            <!---------------Listing type filter------------>
+            <div class="pfil">
+                <span class="material-symbols-outlined" id="icon">
+                    description
+                    </span>
+                <select id="Property" class = "pl">
+                    <option value=""> Listing Type </option>
+                    <option value="sale">For Sale</option>
+                    <option value="rent">For Rent</option>
+
+                </select>
+            </div>
+
+
+
         </div>
 
         <br><br>
@@ -127,7 +133,7 @@
 
             </div>
 
-           
+
         </div>
 
         <!---subscribe to our weekly newsletter-->

@@ -82,6 +82,49 @@ body {
     margin-left: 5px;
 }
 
+/*------------------------filter------------------------------*/
+.filter {
+    border: solid 1px #F3F3F3;
+    background: var(--Neutral-200, #F3F3F3);
+    border-radius: 10px;
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+    max-width: 1500px;
+    margin: auto;
+}
+
+.pfil {
+    border-radius: 12px;
+    border: 1px solid var(--Neutral-400, #ACACAC);
+    width: 216px;
+    height: 72px;
+    background-color: white;
+    margin: 20px;
+}
+
+#Property {
+    outline: none;
+    border: none;
+    margin-left: 40px;
+    color: var(--Neutral-800, #070707);
+    opacity: 0.50;
+    font-family: Plus Jakarta Sans;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    width: 150px;
+    height: 100%;
+}
+
+#icon {
+    position: absolute;
+    margin-top: 22px;
+    margin-left: 10px;
+    width: 25px;
+    height: 25px;
+}
+
 /*---------------------div holding the properties section---------------------------------------*/
 .propertiess {
     max-width: 1600px;
@@ -338,36 +381,3 @@ footer {
     font-weight: 500;
     text-decoration-line: underline;
 }
-
-
-
-      /* Basic styling for the custom dropdown */
-      .custom-dropdown {
-        position: relative;
-        width: 200px;
-    }
-
-    .custom-dropdown select {
-        appearance: none;
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        width: 100%;
-        padding: 10px;
-        font-size: 16px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-    }
-
-    .custom-dropdown .arrow {
-        position: absolute;
-        top: 50%;
-        right: 10px;
-        transform: translateY(-50%);
-    }
-
-    /* Style for the icon in the dropdown */
-    .custom-dropdown .icon-option:before {
-        content: "\e84f"; /* Unicode for the house icon in Material Icons */
-        font-family: 'Material Icons';
-        margin-right: 5px;
-    }

@@ -25,13 +25,67 @@ const storage = multer.diskStorage({
     destination: './public/property',
     filename: (req, file, cb) => {
 
-        cb(null,   Date.now() + path.extname(file.originalname));
+        cb(null, Date.now() + path.extname(file.originalname));
         // file.fieldname is name of the field (image)
         // path.extname get the uploaded file extension
     },
 });
 
 const upload = multer({ storage: storage });
+
+//route to filter the properties
+router.post('/filter', ((req, res) => {
+
+    //array to store the data and images path
+    const dat = [];
+
+    //function to get all the images path
+    const images = async (email, title, dataa, length, p) => {
+
+        //store the data along with its pictures
+        const datta = {
+            dataaa: {},
+            filepath: [],
+        }
+
+        //find images with the same email and title
+        Image.find({ Email: email, PropertyTile: title })
+            .then(data => {
+
+                //loop through the data
+                for (var i = 0; i < data.length; i++) {
+
+                    datta.dataaa = dataa;
+                    datta.filepath.push(data[i].Path)
+
+                }
+
+                //push the datta to dat
+                dat.push(datta);
+
+                if (p + 1 == length) {
+                    res.send(dat)
+                }
+            })
+
+    }
+
+    Property.find({ PropertyType: req.body.fil || ListingType: req.body.fil })
+        .then(data => {
+
+            const getdata = async () => {
+                //loop through the data
+                for (var i = 0; i < data.length; i++) {
+                    //console.log("Emiail: " + data[i].Email + " PropertyTitlte: " + data[i].Title)
+                    await images(data[i].Email, data[i].Title, data[i], data.length, i)
+
+                }
+            }
+            getdata()
+
+        })
+
+}))
 
 //route to fetch all the uploaded properties
 router.post("/properties", ((req, res) => {
