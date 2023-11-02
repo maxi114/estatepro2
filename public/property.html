@@ -31,7 +31,7 @@
 
 <body>
 
-    <!---------------------------------------------------div to hold the hole page------------------------------------------------->
+    <!---------------------------------------------------div to hold the whole page------------------------------------------------->
     <div class="containner">
 
 
@@ -93,7 +93,7 @@
                 <span class="material-symbols-outlined" id="icon">
                     home
                 </span>
-                <select id="Property" class = "pll">
+                <select id="Property" class="pll">
                     <option value=""> Property </option>
                     <option value="Commercial">Commercial</option>
                     <option value="Residential"> Residential</option>
@@ -109,11 +109,11 @@
             <div class="pfil">
                 <span class="material-symbols-outlined" id="icon">
                     description
-                    </span>
-                <select id="Property" class = "pl">
+                </span>
+                <select id="Property" class="pl">
                     <option value=""> Listing Type </option>
-                    <option value="sale">For Sale</option>
-                    <option value="rent">For Rent</option>
+                    <option value="For Sale">For Sale</option>
+                    <option value="For Rent">For Rent</option>
 
                 </select>
             </div>
@@ -126,11 +126,14 @@
         <!------------------------------------------------div holding the properties---------------------------------------------->
         <div class="propertiess">
 
-
             <!----div holding the properties--->
             <div class="divpr">
 
+                <div class="spinner-border" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
 
+                <i class="bi bi-exclamation-triangle" id = "nod" style="display: none;">No data</i>
             </div>
 
 

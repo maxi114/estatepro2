@@ -36,6 +36,96 @@
 
     });
 
+    //function to post the properties
+
+    const propertiess = (response) => {
+        const data = response.data
+
+        //array to store images
+        var images = [];
+
+        //loop through the data
+        for (var i = 0; i < data.length; i++) {
+
+            //loop through the images
+            for (var p = 0; p < data[i].filepath.length; p++) {
+
+                if (p == 0) {
+                    //store the images in an array
+                    images.push(
+                        "<div class=\"carousel-item active\">" +
+                        "<img src=\"./" + data[i].filepath[p] + "\" class=\"d-block w-100\" alt=\"...\">" +
+                        "</div>"
+                    );
+                }
+
+                else {
+                    //store the images in an array
+                    images.push(
+                        "<div class=\"carousel-item\">" +
+                        "<img src=\"./" + data[i].filepath[p] + "\" class=\"d-block w-100\" alt=\"...\">" +
+                        "</div>"
+                    );
+                }
+
+                //store the images in an array
+
+
+            }
+
+            images = images.join("")
+            //Send the data to client side for viewing
+            $(
+                "<div class = \"hld\">" +
+                "<div class =\"card\" style =\"width: 100%; border: none;\" >" +
+                "<div id=\"carouselExampleIndicators" + i + "\" class=\"carousel slide\">" +
+                "<div class=\"card-img-top carousel-inner\">" +
+                images +
+                "</div>" +
+                "</div>" +
+                " <button class=\"carousel-control-prev\" type=\"button\" data-bs-target=\"#carouselExampleIndicators" + i + "\" data-bs-slide=\"prev\">" +
+                "<span class=\"carousel-control-prev-icon\" aria-hidden=\"true\"></span>" +
+                "<span class=\"visually-hidden\">Previous</span>" +
+                "</button>" +
+                "<button class=\"carousel-control-next\" type=\"button\" data-bs-target=\"#carouselExampleIndicators" + i + "\" data-bs-slide=\"next\">" +
+                "<span class=\"carousel-control-next-icon\" aria-hidden=\"true\"></span>" +
+                "<span class=\"visually-hidden\">Next</span>" +
+                "</button>" +
+                "</div>" +
+                " <div class=\"card-body\">" +
+                "<br>" +
+                "<div class=\"line2\" ></div>" +
+
+                "<h5 class=\"card-title\">$ " + data[i].dataaa.ListingPrice + "</h5>" +
+                "<p class=\"card-text\">Home in " + data[i].dataaa.Location + "</p>" +
+
+                "<div class=\"line3\"></div>" +
+                "<br>" +
+                " <div class=\"card-body row align-items-center\" style = \"margin-left: 3px\" >" +
+                "<div class=\"card-link\" style=\" margin-right: 30px\">" +
+                "<img src=\"./images/sqftimg.png\" class = \"linkimg\" alt=\"\" srcset=\"\">" +
+                "<p class = \"linktxt\"> " + data[i].dataaa.BuildingSqft + " sqft </p>" +
+                "</div>" +
+
+                "<div class=\"card-link\" style=\" margin-right: 30px\">" +
+                "<img src=\"./images/bermimg.png\" class = \"linkimg linkimg1\" alt=\"\" srcset=\"\">" +
+                "<p class = \"linktxt linktxt1\"> " + data[i].dataaa.Bathrooms + " </p>" +
+                "</div>" +
+
+                "<div class=\"card-link\">" +
+                "<img src=\"./images/bahroomimg.png\" class = \"linkimg linkimg1\" alt=\"\" srcset=\"\">" +
+                "<p class = \"linktxt linktxt1\"> " + data[i].dataaa.Bedrooms + " </p>" +
+                "</div>" +
+                "</div>" +
+
+                "</div>" +
+                "</div>" +
+                "</div>"
+            ).appendTo(".divpr")
+
+            images = []
+        }
+    }
     //home controller
     app.controller("HomeController", HomeController);
     function HomeController($location, $scope, $window, $http) {
@@ -59,27 +149,115 @@
         var vm = this
 
         //when user clicks the property filter
-        $(".pll").on('change', function (){
+        $(".pll").on('change', function () {
+            $(".spinner-border").show()
+            $(".hld").remove()
+            $("#nod").hide()
             var pr = this.value
 
-            $http.post("/post/filter",{
-                fil: pr
-            })
-            .then((response)=>{
-                console.log(response.data)
-            })
+            var pr2 = $(".pl").val()
+
+            if (pr2 == "") {
+
+                $http.post("/post/filter", {
+                    fil: pr
+                })
+                    .then((response) => {
+                        
+                        if (response.data == "nothing"){
+                            $(".spinner-border").hide()
+                            $(".hld").remove()
+                            $("#nod").show()
+                        }
+                        else{
+                            $(".spinner-border").hide()
+                            $(".hld").remove()
+                            $("#nod").hide()
+                            //showcase the properties
+                            propertiess(response)
+                        }
+
+                    })
+
+            }
+
+            else {
+
+                $http.post("/post/filter2", {
+                    fil: pr,
+                    fil2: pr2
+                })
+                    .then((response) => {
+                        if (response.data == "nothing"){
+                            $(".spinner-border").hide()
+                            $(".hld").remove()
+                            $("#nod").show()
+                        }
+                        else{
+                            $(".spinner-border").hide()
+                            $(".hld").remove()
+                            $("#nod").hide()
+                            //showcase the properties
+                            propertiess(response)
+                        }
+                    })
+            }
+
         })
 
-        //when user clicks the lsting type filter
-        $(".pl").on('change', function() {
+        //when user clicks the listing type filter
+        $(".pl").on('change', function () {
+            $(".spinner-border").show()
+            $(".hld").remove()
+            $("#nod").hide()
+
             var ch = this.value
 
-            $http.post("/post/filter",{
-                fil: ch
-            })
-            .then((response)=>{
-                console.log(response.data)
-            })
+            var ch2 = $(".pll").val()
+
+            if (ch2 == "") {
+
+                $http.post("/post/filterr", {
+                    fil: ch
+                })
+                    .then((response) => {
+                        if (response.data == "nothing"){
+                            $(".spinner-border").hide()
+                            $(".hld").remove()
+                            $("#nod").show()
+                        }
+                        else{
+                            $(".spinner-border").hide()
+                            $(".hld").remove()
+                            $("#nod").hide()
+                            //showcase the properties
+                            propertiess(response)
+                        }
+                    })
+
+            }
+            else {
+                console.log(ch + " " + ch2)
+                $http.post("/post/filter2", {
+                    fil: ch2,
+                    fil2: ch
+                })
+                    .then((response) => {
+                        if (response.data == "nothing"){
+                            $(".spinner-border").hide()
+                            $(".hld").remove()
+                            $("#nod").show()
+                        }
+                        else{
+                            $(".spinner-border").hide()
+                            $(".hld").remove()
+                            $("#nod").hide()
+                            //showcase the properties
+                            propertiess(response)
+                        }
+                    })
+            }
+
 
         })
 
@@ -89,92 +267,15 @@
         })
             .then((response) => {
 
-                const data = response.data
-
-                //array to store images
-                var images = [];
-
-                //loop through the data
-                for (var i = 0; i < data.length; i++) {
-
-                    //loop through the images
-                    for (var p = 0; p < data[i].filepath.length; p++) {
-
-                        console.log(data[i].filepath[p])
-                        if(p == 0){
-                            //store the images in an array
-                            images.push(
-                                "<div class=\"carousel-item active\">" +
-                                "<img src=\"./"+data[i].filepath[p]+"\" class=\"d-block w-100\" alt=\"...\">" +
-                                "</div>"
-                            );
-                        }
-
-                        else{
-                            //store the images in an array
-                            images.push(
-                                "<div class=\"carousel-item\">" +
-                                "<img src=\"./"+data[i].filepath[p]+"\" class=\"d-block w-100\" alt=\"...\">" +
-                                "</div>"
-                            );
-                        }
-
-                        //store the images in an array
-                       
-
-                    }
-
-                    images = images.join("")
-                    //Send the data to client side for viewing
-                    $(
-                        "<div class = \"hld\">"+
-                        "<div class =\"card\" style =\"width: 100%; border: none;\" >" +
-                        "<div id=\"carouselExampleIndicators"+i+"\" class=\"carousel slide\">" +
-                        "<div class=\"card-img-top carousel-inner\">" +
-                        images +
-                        "</div>" +
-                        "</div>"+
-                        " <button class=\"carousel-control-prev\" type=\"button\" data-bs-target=\"#carouselExampleIndicators"+i+"\" data-bs-slide=\"prev\">" +
-                        "<span class=\"carousel-control-prev-icon\" aria-hidden=\"true\"></span>" +
-                        "<span class=\"visually-hidden\">Previous</span>" +
-                        "</button>" +
-                        "<button class=\"carousel-control-next\" type=\"button\" data-bs-target=\"#carouselExampleIndicators"+i+"\" data-bs-slide=\"next\">" +
-                        "<span class=\"carousel-control-next-icon\" aria-hidden=\"true\"></span>" +
-                        "<span class=\"visually-hidden\">Next</span>" +
-                        "</button>" +
-                        "</div>" +
-                        " <div class=\"card-body\">" +
-                        "<br>"+
-                        "<div class=\"line2\" ></div>" +
-
-                        "<h5 class=\"card-title\">$ " + data[i].dataaa.ListingPrice + "</h5>" +
-                        "<p class=\"card-text\">Home in " + data[i].dataaa.Location + "</p>" +
-
-                        "<div class=\"line3\"></div>" +
-                        "<br>"+
-                        " <div class=\"card-body row align-items-center\" style = \"margin-left: 3px\" >" +
-                        "<div class=\"card-link\" style=\" margin-right: 30px\">"  +
-                        "<img src=\"./images/sqftimg.png\" class = \"linkimg\" alt=\"\" srcset=\"\">" +
-                        "<p class = \"linktxt\"> "+data[i].dataaa.BuildingSqft+" sqft </p>" +
-                        "</div>" +
-
-                        "<div class=\"card-link\" style=\" margin-right: 30px\">" +
-                        "<img src=\"./images/bermimg.png\" class = \"linkimg linkimg1\" alt=\"\" srcset=\"\">" +
-                        "<p class = \"linktxt linktxt1\"> "+data[i].dataaa.Bathrooms+" </p>" +
-                        "</div>" +
-
-                        "<div class=\"card-link\">" +
-                        "<img src=\"./images/bahroomimg.png\" class = \"linkimg linkimg1\" alt=\"\" srcset=\"\">" +
-                        "<p class = \"linktxt linktxt1\"> "+data[i].dataaa.Bedrooms+" </p>" +
-                        "</div>" +
-                        "</div>" +
-
-                        "</div>" +
-                        "</div>"+
-                        "</div>"
-                    ).appendTo(".divpr")
-
-                    images = []
+                if (response.data.length > 0) {
+                    $(".spinner-border").hide()
+                    $(".hld").remove()
+                    //showcase the properties
+                    propertiess(response)
+                }
+                else {
+                    $(".hld").remove()
+                    $("#nod").show()
                 }
 
             })
