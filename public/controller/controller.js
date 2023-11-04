@@ -208,8 +208,8 @@
         //when user clicks the listing type filter
         $(".pl").on('change', function () {
             $(".spinner-border").show()
-            $(".hld").remove()
-            $("#nod").hide()
+            $(".hld").remove();
+            $("#nod").hide();
 
             var ch = this.value
 
