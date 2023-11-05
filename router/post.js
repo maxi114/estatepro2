@@ -146,7 +146,7 @@ router.post('/filterr', ((req, res) => {
             }
 
             else {
-                res.send("nothing")
+                res.send("nothing");
             }
 
         })
