@@ -163,13 +163,13 @@
                     fil: pr
                 })
                     .then((response) => {
-                        
-                        if (response.data == "nothing"){
+
+                        if (response.data == "nothing") {
                             $(".spinner-border").hide()
                             $(".hld").remove()
                             $("#nod").show()
                         }
-                        else{
+                        else {
                             $(".spinner-border").hide()
                             $(".hld").remove()
                             $("#nod").hide()
@@ -188,12 +188,12 @@
                     fil2: pr2
                 })
                     .then((response) => {
-                        if (response.data == "nothing"){
+                        if (response.data == "nothing") {
                             $(".spinner-border").hide()
                             $(".hld").remove()
                             $("#nod").show()
                         }
-                        else{
+                        else {
                             $(".spinner-border").hide()
                             $(".hld").remove()
                             $("#nod").hide()
@@ -221,12 +221,12 @@
                     fil: ch
                 })
                     .then((response) => {
-                        if (response.data == "nothing"){
+                        if (response.data == "nothing") {
                             $(".spinner-border").hide()
                             $(".hld").remove()
                             $("#nod").show()
                         }
-                        else{
+                        else {
                             $(".spinner-border").hide()
                             $(".hld").remove()
                             $("#nod").hide()
@@ -243,12 +243,12 @@
                     fil2: ch
                 })
                     .then((response) => {
-                        if (response.data == "nothing"){
+                        if (response.data == "nothing") {
                             $(".spinner-border").hide()
                             $(".hld").remove()
                             $("#nod").show()
                         }
-                        else{
+                        else {
                             $(".spinner-border").hide()
                             $(".hld").remove()
                             $("#nod").hide()
@@ -386,8 +386,6 @@
         //when user clicks submit my property
         $("#sbtf").on("click", () => {
 
-
-
             $(".error").html("")
             $(".error2").html("")
             $(".error1").html("")
@@ -493,6 +491,12 @@
                 return
             }
 
+            $("#sbtf").html("")
+            $("#sbtf").css('color: white')
+            $("<div class=\"spinner-border\" role=\"status\" >" +
+                "<span class=\"sr-only\">Loading...</span>" +
+                "</div>").appendTo("#sbtf")
+
             var formData = new FormData();
 
             // Append each file to the FormData object
@@ -505,7 +509,6 @@
             formData.append('property', JSON.stringify(vm.property));
             formData.append('amenities', JSON.stringify(vm.amenities));
 
-
             //send the data to the router
             $http.post('/post/upload', formData, {
                 transformRequest: angular.identity,
@@ -514,6 +517,24 @@
                 .then(function (response) {
                     // Handle the response
                     console.log(response.data);
+
+                    //if property is succesfully posted
+                    if (response.data == "success") {
+                        $("#sbtf").css("background-color", "green");
+                        $("#sbtf").css("border", "none");
+                        $(".spinner-border").remove();
+                        $("#sbtf").html("Success")
+
+                        setTimeout(function() {
+                            location.href = "/properties"
+                        }, 3000);
+                    }
+
+                    //if thei property already exists
+                    if (response.data == "property already exists for this client") {
+
+                    }
+
                 })
                 .catch(function (error) {
                     // Handle the error

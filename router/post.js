@@ -503,7 +503,7 @@ router.post("/upload", upload.any(), ((req, res) => {
                             //save the property
                             propertyy.save();
 
-                            res.send("Success")
+                            res.send("success")
                         }
                         //if client already has the property
                         else {
