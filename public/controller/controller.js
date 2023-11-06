@@ -386,6 +386,7 @@
         //when user clicks submit my property
         $("#sbtf").on("click", () => {
 
+
             $(".error").html("")
             $(".error2").html("")
             $(".error1").html("")
@@ -525,13 +526,25 @@
                         $(".spinner-border").remove();
                         $("#sbtf").html("Success")
 
-                        setTimeout(function() {
+                        setTimeout(function () {
                             location.href = "/properties"
                         }, 3000);
                     }
 
                     //if thei property already exists
                     if (response.data == "property already exists for this client") {
+                        $("#sbtf").css("background-color", "red");
+                        $("#sbtf").css("border", "none");
+                        $(".spinner-border").remove();
+                        $("#sbtf").html("Error")
+                        $(".error1").html("This property already exists.")
+
+                        setTimeout(function () {
+                            $("#sbtf").html("Submit my Property")
+                            $(".error").html("")
+                            $(".error2").html("")
+                            $(".error1").html("")
+                        }, 3000);
 
                     }
 
