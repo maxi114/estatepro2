@@ -33,6 +33,66 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage: storage });
 
+//route to get the property thats clicked by the user
+router.post("/propertty", ((req, res) => {
+
+     //array to store the data and images path
+     const dat = [];
+     
+    //function to get all the images path
+    const images = async (email, title, dataa, length, p) => {
+
+        //store the data along with its pictures
+        const datta = {
+            dataaa: {},
+            filepath: [],
+        }
+
+        //find images with the same email and title
+        Image.find({ Email: email, PropertyTile: title })
+            .then(data => {
+
+                //loop through the data
+                for (var i = 0; i < data.length; i++) {
+
+                    datta.dataaa = dataa;
+                    datta.filepath.push(data[i].Path)
+
+                }
+
+                //push the datta to dat
+                dat.push(datta);
+
+                if (p + 1 == length) {
+                    res.send(dat)
+                }
+            })
+
+    }
+
+
+    //find the clicked property
+    Property.find({ _id: req.body.id })
+        .then(data => {
+            if (data.length > 0) {
+                const getdata = async () => {
+                    //loop through the data
+                    for (var i = 0; i < data.length; i++) {
+                        //console.log("Emiail: " + data[i].Email + " PropertyTitlte: " + data[i].Title)
+                        await images(data[i].Email, data[i].Title, data[i], data.length, i)
+
+                    }
+                }
+                getdata()
+            }
+
+            else {
+                res.send("nothing")
+            }
+        })
+
+}))
+
 //route to filter the properties 2
 router.post('/filter2', ((req, res) => {
 

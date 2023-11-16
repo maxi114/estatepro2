@@ -34,12 +34,20 @@
             controllerAs: "vm",
         })
 
+        //property page
+        $routeProvider.when('/propertty/:token', {
+            templateUrl: "./propertty.html",
+            controller: "ProperttyController",
+            controllerAs: "vm",
+        })
+
     });
 
     //function to post the properties
 
     const propertiess = (response) => {
         const data = response.data
+
 
         //array to store images
         var images = [];
@@ -74,9 +82,11 @@
             }
 
             images = images.join("")
+
             //Send the data to client side for viewing
             $(
-                "<div class = \"hld\">" +
+
+                "<div class = \"hld\" id=" + data[i].dataaa._id + ">" +
                 "<div class =\"card\" style =\"width: 100%; border: none;\" >" +
                 "<div id=\"carouselExampleIndicators" + i + "\" class=\"carousel slide\">" +
                 "<div class=\"card-img-top carousel-inner\">" +
@@ -101,7 +111,7 @@
 
                 "<div class=\"line3\"></div>" +
                 "<br>" +
-                " <div class=\"card-body row align-items-center\" style = \"margin-left: 3px\" >" +
+                " <div class=\"card-body row align-items-center\" id = \"idem\" style = \"margin-left: 3px\" >" +
                 "<div class=\"card-link\" style=\" margin-right: 30px\">" +
                 "<img src=\"./images/sqftimg.png\" class = \"linkimg\" alt=\"\" srcset=\"\">" +
                 "<p class = \"linktxt\"> " + data[i].dataaa.BuildingSqft + " sqft </p>" +
@@ -121,10 +131,22 @@
                 "</div>" +
                 "</div>" +
                 "</div>"
+
             ).appendTo(".divpr")
 
             images = []
+
         }
+
+        //when user clicks the properties
+        $(".card-body").click(function () {
+            var pr = $(this).parents("div")[0].id
+
+            //redirect user to the properties page
+            location.href = "propertty/" + pr
+
+        })
+
     }
     //home controller
     app.controller("HomeController", HomeController);
@@ -140,6 +162,28 @@
 
         var vm = this
 
+    }
+
+    //propertty controller
+    app.controller("ProperttyController", ProperttyController);
+    function ProperttyController($location, $scope, $window, $http) {
+
+        var vm = this
+
+        //retrive token from the url
+        const url = window.location.pathname.split("/")
+        const url2 = url[2];
+
+        //route to retrieve the property
+        $http.post("/post/propertty",{
+            id: url2
+        })
+        .then((response)=>{
+            console.log(response.data[0])
+
+            //html text to render to the user
+            $()
+        })
     }
 
     //properties controller
@@ -237,7 +281,6 @@
 
             }
             else {
-                console.log(ch + " " + ch2)
                 $http.post("/post/filter2", {
                     fil: ch2,
                     fil2: ch
@@ -510,7 +553,7 @@
             formData.append('property', JSON.stringify(vm.property));
             formData.append('amenities', JSON.stringify(vm.amenities));
 
-            //send the data to the router
+            //send the data to the server
             $http.post('/post/upload', formData, {
                 transformRequest: angular.identity,
                 headers: { 'Content-Type': undefined }

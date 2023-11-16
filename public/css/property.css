@@ -146,6 +146,10 @@ body {
     margin: 30px
 }
 
+.card-body :hover{
+    cursor: pointer;
+}
+
 /*card*/
 
 
