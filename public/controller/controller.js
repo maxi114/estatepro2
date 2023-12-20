@@ -171,19 +171,19 @@
         var vm = this
 
         //retrive token from the url
-        const url = window.location.pathname.split("/")
+        const url = window.location.pathname.split("/");
         const url2 = url[2];
 
         //route to retrieve the property
-        $http.post("/post/propertty",{
+        $http.post("/post/propertty", {
             id: url2
         })
-        .then((response)=>{
-            console.log(response.data[0])
+            .then((response) => {
+                console.log(response.data)
 
-            //html text to render to the user
-            $()
-        })
+                //html text to render to the user
+                $()
+            })
     }
 
     //properties controller

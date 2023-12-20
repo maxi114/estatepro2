@@ -14,7 +14,8 @@ const fs = require('fs');
 //require the client, image & property models
 const Client = require("../models/Client");
 const Property = require("../models/property");
-const Image = require("../models/image")
+const Image = require("../models/image");
+const { error } = require("console");
 
 //get the router 
 const router = express.Router({ caseSensitive: true })
@@ -36,9 +37,9 @@ const upload = multer({ storage: storage });
 //route to get the property thats clicked by the user
 router.post("/propertty", ((req, res) => {
 
-     //array to store the data and images path
-     const dat = [];
-     
+    //array to store the data and images path
+    const dat = [];
+
     //function to get all the images path
     const images = async (email, title, dataa, length, p) => {
 
@@ -72,24 +73,25 @@ router.post("/propertty", ((req, res) => {
 
 
     //find the clicked property
-    Property.find({ _id: req.body.id })
+    Property.findOne({ _id: req.body.id })
         .then(data => {
-            if (data.length > 0) {
+            if (data && data.length > 0) {
                 const getdata = async () => {
-                    //loop through the data
-                    for (var i = 0; i < data.length; i++) {
-                        //console.log("Emiail: " + data[i].Email + " PropertyTitlte: " + data[i].Title)
-                        await images(data[i].Email, data[i].Title, data[i], data.length, i)
-
+                    // Loop through the data
+                    for (let i = 0; i < data.length; i++) {
+                        await images(data[i].Email, data[i].Title, data[i], data.length, i);
                     }
-                }
-                getdata()
-            }
-
-            else {
-                res.send("nothing")
+                };
+                getdata();
+            } else {
+                res.send("nothing");
             }
         })
+        .catch(error => {
+            // Handle any errors that occurred during the findOne operation
+            res.send("nothing")
+        });
+
 
 }))
 

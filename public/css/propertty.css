@@ -84,11 +84,11 @@ body {
     position: relative;
 }
 
-.imgleft{
-width: 50%;
+.imgleft {
+    width: 50%;
 }
 
-.imgright{
+.imgright {
     position: absolute;
     right: 0px;
     top: 0px;
@@ -113,26 +113,140 @@ width: 50%;
 }
 
 /*card link*/
-.card-link{
+.card-link {
     width: 150px;
     position: relative;
 }
-.linkimg{
+
+.linkimg {
     width: 25px;
     height: 25px;
     margin: 0px;
 }
-.linktxt{
+
+.linktxt {
     position: absolute;
     left: 40px;
     top: 3px;
     color: var(--Neutral-800, #070707);
-font-family: Plus Jakarta Sans;
-font-size: 20px;
-font-style: italic;
-font-weight: 200;
-line-height: 100%; /* 20px */
+    font-family: Plus Jakarta Sans;
+    font-size: 20px;
+    font-style: italic;
+    font-weight: 200;
+    line-height: 100%;
+    /* 20px */
 }
+
+/*-----------------------deiv holdint the bottom description and get in touch option------------------------------*/
+.second {
+    position: relative;
+    height: 500px;
+
+}
+
+/*--left side --*/
+.seleft {
+    position: absolute;
+    left: 0px;
+    width: 60%;
+}
+
+/*property amenities*/
+.am {
+    list-style-type: none;
+    display: flex;
+    flex-flow: wrap;
+    justify-content: left;
+    min-height: 100px;
+    max-width: 600px;
+    margin-top: 20px;
+}
+
+.amm {
+    margin: 0px;
+    margin-right: 30px;
+    position: relative;
+}
+
+.amm span {
+    position: absolute;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    background-image: url("../images/Vector.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.amp {
+    margin: 0px;
+    margin-left: 30px;
+}
+
+/*-right -side*/
+.seright {
+    position: absolute;
+    right: 0px;
+    width: 39%;
+    text-align: center;
+}
+
+/*---------------------------------property gallery--------------------------------------------------*/
+
+.propertyGallery{
+    max-width: 600px;
+    margin: auto;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	vertical-align: middle;
+	display: inline-block;
+}
+
+/* Main CSS */
+.grid-wrapper > div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.grid-wrapper > div > img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 5px;
+}
+
+.grid-wrapper {
+	display: grid;
+	grid-gap: 10px;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	grid-auto-rows: 200px;
+	grid-auto-flow: dense;
+}
+.grid-wrapper .wide {
+	grid-column: span 2;
+}
+.grid-wrapper .tall {
+	grid-row: span 2;
+}
+.grid-wrapper .big {
+	grid-column: span 2;
+	grid-row: span 2;
+}
+
+
+/* Media Query for responsiveness */
+@media (max-width: 600px) {
+    .checkerboard .item {
+        flex: 0 0 49%;
+        /* Two items per row on smaller screens */
+    }
+}
+
 /*--------------------------------------footer------------------------------------------*/
 footer {
     position: relative;
