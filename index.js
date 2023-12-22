@@ -21,9 +21,12 @@ app.use('/node_modules', express.static(__dirname + '/node_modules'));
 //router to use
 app.use('/post', router);
 
+//load in secret variable
+dotenv.config({ vaerbose: true });
+
 //db connection string
 //const db = "mongodb://db:27017/estatpro"
-const db = "mongodb://127.0.0.1:27017/estatpro"
+const db = "mongodb+srv://pro:"+process.env.MongoPwd+"@mycluster.pbbtvdv.mongodb.net/estatpro";
 
 //connect to database
 mongoose.connect(db)
@@ -47,7 +50,7 @@ app.get('*', (req,res)=>{
 });
 
 //define port
-const port = process.env.PORT || 5000
+const port = process.env.PORT
 
 //listen to port
 app.listen(port, () => console.log('listening on port ' + port)); 
