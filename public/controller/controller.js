@@ -190,7 +190,7 @@
                 $(".image1").css('background-image', 'url(' + pics[0] + ')');
 
                 //render the price on the picture
-                $(".price").html(parseInt(dat.dataaa.ListingPrice).toLocaleString())
+                $(".price").html("$ "+parseInt(dat.dataaa.ListingPrice).toLocaleString())
 
                 //render the listing type
                 $(".type").html(dat.dataaa.ListingType)
@@ -216,7 +216,7 @@
                 $(".description").html(dat.dataaa.ListingDescription);
 
                 //render the price on the property rate
-                $(".mn").html(parseInt(dat.dataaa.ListingPrice).toLocaleString())
+                $(".mn").html("$ "+parseInt(dat.dataaa.ListingPrice).toLocaleString())
 
 
                 //var to store the property amenities
