@@ -179,10 +179,76 @@
             id: url2
         })
             .then((response) => {
-                console.log(response.data)
 
-                //html text to render to the user
-                $()
+                //var to store the data
+                var dat = response.data[0];
+
+                //store the pictures
+                var pics = dat.filepath
+
+                //render the picture
+                $(".image1").css('background-image', 'url(' + pics[0] + ')');
+
+                //render the price on the picture
+                $(".price").html(parseInt(dat.dataaa.ListingPrice).toLocaleString())
+
+                //render the listing type
+                $(".type").html(dat.dataaa.ListingType)
+
+                //check if its a home or office
+                if (dat.dataaa.PropertyType.includes("Home")) {
+                    $(".title").html("Home In " + dat.dataaa.Location)
+                }
+                else {
+                    $(".title").html("Office In " + dat.dataaa.Location)
+                }
+
+                //render the sqft
+                $(".ki").html(dat.dataaa.BuildingSqft.toLocaleString() + " sqft")
+
+                //render the number of bedrooms
+                $(".k2").html(dat.dataaa.Bedrooms + " bedrooms")
+
+                //render the bathrooms
+                $(".k3").html(dat.dataaa.Bathrooms + " bathrooms")
+
+                //render the property descriptions
+                $(".description").html(dat.dataaa.ListingDescription);
+
+                //render the price on the property rate
+                $(".mn").html(parseInt(dat.dataaa.ListingPrice).toLocaleString())
+
+
+                //var to store the property amenities
+                var amenities = Object.keys(dat.dataaa.Amenities).filter(function (key) {
+                    return dat.dataaa.Amenities[key]
+                })
+
+                //loop through the property amenities
+                for (var i = 0; i < amenities.length; i++) {
+
+                    //render the property amenities
+                    $(
+                        "<li class=\"amm\">" +
+                        "<span class = \"chemi\"></span>" +
+                        "<p class=\"amp\">" + amenities[i] + "</p>" +
+                        "</li>"
+                    ).appendTo(".am")
+
+                }
+
+                console.log(dat)
+                
+                //loop through the gallery
+                for (var p = 0; p < dat.filepath.length; p++) {
+
+                    console.log(dat.filepath[p])
+
+                    $(
+                        "<div>" +
+                        "<img src = " + dat.filepath[p] + ">" +
+                        "</div>").appendTo(".grid-wrapper");
+                }
             })
     }
 

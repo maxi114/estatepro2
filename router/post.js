@@ -73,7 +73,7 @@ router.post("/propertty", ((req, res) => {
 
 
     //find the clicked property
-    Property.findOne({ _id: req.body.id })
+    Property.find({ _id: req.body.id })
         .then(data => {
             if (data && data.length > 0) {
                 const getdata = async () => {
