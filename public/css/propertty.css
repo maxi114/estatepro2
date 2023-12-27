@@ -276,17 +276,29 @@ body {
     /* 136.4% */
 }
 
-.btnn{
+.btnn {
     border-radius: 12px;
-background: var(--Primary-Color, #F15A29);
-height:50px;
-color: white;
+    background: var(--Primary-Color, #F15A29);
+    height: 50px;
+    color: white;
 }
+
 /*---------------------------------property gallery--------------------------------------------------*/
 
 .propertyGallery {
-    max-width: 600px;
+    max-width: 1000px;
     margin: auto;
+    margin-top: 150px;
+}
+
+.propertyGallery h1 {
+    color: var(--Neutral-800, #070707);
+    font-family: Plus Jakarta Sans;
+    font-size: 40px;
+    font-style: italic;
+    font-weight: 200;
+    line-height: 100%;
+    opacity: 0.8;
 }
 
 img {
@@ -323,7 +335,7 @@ img {
 }
 
 .grid-wrapper .tall {
-    grid-row: span 2;
+    grid-row: span 3;
 }
 
 .grid-wrapper .big {
