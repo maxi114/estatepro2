@@ -41,6 +41,20 @@
             controllerAs: "vm",
         })
 
+        //our agents page
+        $routeProvider.when('/agent', {
+            templateUrl: "./agent.html",
+            controller: "AgentController",
+            controllerAs: "vm",
+        })
+
+        //toms page
+        $routeProvider.when('/tom/001', {
+            templateUrl: "./tom.html",
+            controller: "TomController",
+            controllerAs: "vm",
+        })
+
     });
 
     //function to post the properties
@@ -159,6 +173,22 @@
     //about controller
     app.controller("AboutController", AboutController);
     function AboutController($location, $scope, $window, $http) {
+
+        var vm = this
+
+    }
+
+    //agent controller
+    app.controller("AgentController", AgentController);
+    function AgentController($location, $scope, $window, $http) {
+
+        var vm = this
+
+    }
+
+    //Tom controller
+    app.controller("TomController", TomController);
+    function TomController($location, $scope, $window, $http) {
 
         var vm = this
 
