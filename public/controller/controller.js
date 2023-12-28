@@ -55,6 +55,41 @@
             controllerAs: "vm",
         })
 
+        //chris page
+        $routeProvider.when('/chris/002', {
+            templateUrl: "./chris.html",
+            controller: "ChrisController",
+            controllerAs: "vm",
+        })
+
+        //sam page
+        $routeProvider.when('/sam/003', {
+            templateUrl: "./sam.html",
+            controller: "SamController",
+            controllerAs: "vm",
+        })
+
+        //scarlett page
+        $routeProvider.when('/scarlett/004', {
+            templateUrl: "./scarlett.html",
+            controller: "ScarlettController",
+            controllerAs: "vm",
+        })
+
+        //steve page
+        $routeProvider.when('/steve/005', {
+            templateUrl: "./steve.html",
+            controller: "SteveController",
+            controllerAs: "vm",
+        })
+
+        //will page
+        $routeProvider.when('/will/006', {
+            templateUrl: "./will.html",
+            controller: "WillController",
+            controllerAs: "vm",
+        })
+
     });
 
     //function to post the properties
@@ -162,6 +197,7 @@
         })
 
     }
+
     //home controller
     app.controller("HomeController", HomeController);
     function HomeController($location, $scope, $window, $http) {
@@ -186,13 +222,53 @@
 
     }
 
-    //Tom controller
-    app.controller("TomController", TomController);
-    function TomController($location, $scope, $window, $http) {
+    //chris controller
+    app.controller("ChrisController", ChrisController);
+    function ChrisController($location, $scope, $window, $http) {
 
         var vm = this
 
     }
+
+     //Sam controller
+     app.controller("SamController", SamController);
+     function SamController($location, $scope, $window, $http) {
+ 
+         var vm = this
+ 
+     }
+
+      //Scarlett controller
+    app.controller("ScarlettController", ScarlettController);
+    function ScarlettController($location, $scope, $window, $http) {
+
+        var vm = this
+
+    }
+
+     //steve controller
+     app.controller("SteveController", SteveController);
+     function SteveController($location, $scope, $window, $http) {
+ 
+         var vm = this
+ 
+     }
+
+      //will controller
+    app.controller("WillController", WillController);
+    function WillController($location, $scope, $window, $http) {
+
+        var vm = this
+
+    }
+
+     //Tom controller
+     app.controller("TomController", TomController);
+     function TomController($location, $scope, $window, $http) {
+ 
+         var vm = this
+ 
+     }
 
     //propertty controller
     app.controller("ProperttyController", ProperttyController);
