@@ -344,12 +344,30 @@ body {
 }
 
 #img33 {
-    background-image: url("../images/wrapper.png");
+    background-image: url("../images/dec18.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     height: 20px;
-    width: 240px;
+    width: 290px;
+}
+
+#img331{
+    background-image: url("../images/dec21.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 20px;
+    width: 290px;
+}
+
+#img332{
+    background-image: url("../images/nov29.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 20px;
+    width: 290px;
 }
 
 #vline {

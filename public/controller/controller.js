@@ -90,6 +90,13 @@
             controllerAs: "vm",
         })
 
+        //conact page
+        $routeProvider.when('/contact', {
+            templateUrl: "./contact.html",
+            controller: "ContactController",
+            controllerAs: "vm",
+        })
+
     });
 
     //function to post the properties
@@ -209,6 +216,14 @@
     //about controller
     app.controller("AboutController", AboutController);
     function AboutController($location, $scope, $window, $http) {
+
+        var vm = this
+
+    }
+
+    //contact controller
+    app.controller("ContactController", ContactController);
+    function ContactController($location, $scope, $window, $http) {
 
         var vm = this
 
