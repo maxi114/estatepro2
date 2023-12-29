@@ -97,6 +97,13 @@
             controllerAs: "vm",
         })
 
+        //404 page
+        $routeProvider.when('/error', {
+            templateUrl: "./404.html",
+            controller: "ErrorController",
+            controllerAs: "vm",
+        })
+
     });
 
     //function to post the properties
@@ -229,6 +236,14 @@
 
     }
 
+    //Error controller
+    app.controller("ErrorController", ErrorController);
+    function ErrorController($location, $scope, $window, $http) {
+
+        var vm = this
+
+    }
+
     //agent controller
     app.controller("AgentController", AgentController);
     function AgentController($location, $scope, $window, $http) {
@@ -245,15 +260,15 @@
 
     }
 
-     //Sam controller
-     app.controller("SamController", SamController);
-     function SamController($location, $scope, $window, $http) {
- 
-         var vm = this
- 
-     }
+    //Sam controller
+    app.controller("SamController", SamController);
+    function SamController($location, $scope, $window, $http) {
 
-      //Scarlett controller
+        var vm = this
+
+    }
+
+    //Scarlett controller
     app.controller("ScarlettController", ScarlettController);
     function ScarlettController($location, $scope, $window, $http) {
 
@@ -261,15 +276,15 @@
 
     }
 
-     //steve controller
-     app.controller("SteveController", SteveController);
-     function SteveController($location, $scope, $window, $http) {
- 
-         var vm = this
- 
-     }
+    //steve controller
+    app.controller("SteveController", SteveController);
+    function SteveController($location, $scope, $window, $http) {
 
-      //will controller
+        var vm = this
+
+    }
+
+    //will controller
     app.controller("WillController", WillController);
     function WillController($location, $scope, $window, $http) {
 
@@ -277,13 +292,13 @@
 
     }
 
-     //Tom controller
-     app.controller("TomController", TomController);
-     function TomController($location, $scope, $window, $http) {
- 
-         var vm = this
- 
-     }
+    //Tom controller
+    app.controller("TomController", TomController);
+    function TomController($location, $scope, $window, $http) {
+
+        var vm = this
+
+    }
 
     //propertty controller
     app.controller("ProperttyController", ProperttyController);
@@ -301,89 +316,99 @@
         })
             .then((response) => {
 
-                //var to store the data
-                var dat = response.data[0];
-
-                //store the pictures
-                var pics = dat.filepath
-
-                //render the picture
-                $(".image1").css('background-image', 'url(' + pics[0] + ')');
-
-                //render the price on the picture
-                $(".price").html("$ " + parseInt(dat.dataaa.ListingPrice).toLocaleString())
-
-                //render the listing type
-                $(".type").html(dat.dataaa.ListingType)
-
-                //check if its a home or office
-                if (dat.dataaa.PropertyType.includes("Home")) {
-                    $(".title").html("Home In " + dat.dataaa.Location)
+                console.log(response.data)
+                if (response.data == "nothing") {
+                    $location.path("/error")
                 }
+
                 else {
-                    $(".title").html("Office In " + dat.dataaa.Location)
-                }
 
-                //render the sqft
-                $(".ki").html(dat.dataaa.BuildingSqft.toLocaleString() + " sqft")
+                    //var to store the data
+                    var dat = response.data[0];
 
-                //render the number of bedrooms
-                $(".k2").html(dat.dataaa.Bedrooms + " bedrooms")
+                    //store the pictures
+                    var pics = dat.filepath
 
-                //render the bathrooms
-                $(".k3").html(dat.dataaa.Bathrooms + " bathrooms")
+                    //render the picture
+                    $(".image1").css('background-image', 'url(' + pics[0] + ')');
 
-                //render the property descriptions
-                $(".description").html(dat.dataaa.ListingDescription);
+                    //render the price on the picture
+                    $(".price").html("$ " + parseInt(dat.dataaa.ListingPrice).toLocaleString())
 
-                //render the price on the property rate
-                $(".mn").html("$ " + parseInt(dat.dataaa.ListingPrice).toLocaleString())
+                    //render the listing type
+                    $(".type").html(dat.dataaa.ListingType)
 
-
-                //var to store the property amenities
-                var amenities = Object.keys(dat.dataaa.Amenities).filter(function (key) {
-                    return dat.dataaa.Amenities[key]
-                })
-
-                //loop through the property amenities
-                for (var i = 0; i < amenities.length; i++) {
-
-                    //render the property amenities
-                    $(
-                        "<li class=\"amm\">" +
-                        "<span class = \"chemi\"></span>" +
-                        "<p class=\"amp\">" + amenities[i] + "</p>" +
-                        "</li>"
-                    ).appendTo(".am")
-
-                }
-
-                //loop through the gallery
-                for (var p = 0; p < dat.filepath.length; p++) {
-
-
-                    if (p == 2) {
-
-                        $(
-                            "<div class = \"tall\" >" +
-                            "<img src = " + dat.filepath[p] + ">" +
-                            "</div>").appendTo(".grid-wrapper");
+                    //check if its a home or office
+                    if (dat.dataaa.PropertyType.includes("Home")) {
+                        $(".title").html("Home In " + dat.dataaa.Location)
                     }
-
-                    if (p == 4) {
-                        $(
-                            "<div class = \"wide\">" +
-                            "<img src = " + dat.filepath[p] + ">" +
-                            "</div>").appendTo(".grid-wrapper");
-                    }
-
                     else {
-                        $(
-                            "<div>" +
-                            "<img src = " + dat.filepath[p] + ">" +
-                            "</div>").appendTo(".grid-wrapper");
+                        $(".title").html("Office In " + dat.dataaa.Location)
                     }
+
+                    //render the sqft
+                    $(".ki").html(dat.dataaa.BuildingSqft.toLocaleString() + " sqft")
+
+                    //render the number of bedrooms
+                    $(".k2").html(dat.dataaa.Bedrooms + " bedrooms")
+
+                    //render the bathrooms
+                    $(".k3").html(dat.dataaa.Bathrooms + " bathrooms")
+
+                    //render the property descriptions
+                    $(".description").html(dat.dataaa.ListingDescription);
+
+                    //render the price on the property rate
+                    $(".mn").html("$ " + parseInt(dat.dataaa.ListingPrice).toLocaleString())
+
+
+                    //var to store the property amenities
+                    var amenities = Object.keys(dat.dataaa.Amenities).filter(function (key) {
+                        return dat.dataaa.Amenities[key]
+                    })
+
+                    //loop through the property amenities
+                    for (var i = 0; i < amenities.length; i++) {
+
+                        //render the property amenities
+                        $(
+                            "<li class=\"amm\">" +
+                            "<span class = \"chemi\"></span>" +
+                            "<p class=\"amp\">" + amenities[i] + "</p>" +
+                            "</li>"
+                        ).appendTo(".am")
+
+                    }
+
+                    //loop through the gallery
+                    for (var p = 0; p < dat.filepath.length; p++) {
+
+
+                        if (p == 2) {
+
+                            $(
+                                "<div class = \"tall\" >" +
+                                "<img src = " + dat.filepath[p] + ">" +
+                                "</div>").appendTo(".grid-wrapper");
+                        }
+
+                        if (p == 4) {
+                            $(
+                                "<div class = \"wide\">" +
+                                "<img src = " + dat.filepath[p] + ">" +
+                                "</div>").appendTo(".grid-wrapper");
+                        }
+
+                        else {
+                            $(
+                                "<div>" +
+                                "<img src = " + dat.filepath[p] + ">" +
+                                "</div>").appendTo(".grid-wrapper");
+                        }
+                    }
+
                 }
+
 
             })
     }
