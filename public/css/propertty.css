@@ -3,6 +3,9 @@ body {
     padding: 0px;
 }
 
+.conttainer {
+    padding: 10px;
+}
 
 /*-------------------navigation bar ---------------------------*/
 .container-fluid {
