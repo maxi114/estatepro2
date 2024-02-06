@@ -16,6 +16,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(__dirname + '/public'))
 app.use(express.static(__dirname+ '/public/controller'))
+app.use(express.static(__dirname+ '/public/css'))
 app.use('/node_modules', express.static(__dirname + '/node_modules'));
 
 //router to use
@@ -25,8 +26,8 @@ app.use('/post', router);
 dotenv.config({ vaerbose: true });
 
 //db connection string
-//const db = "mongodb://db:27017/estatpro"
-const db = "mongodb+srv://pro:"+process.env.MongoPwd+"@mycluster.pbbtvdv.mongodb.net/estatpro";
+const db = "mongodb://127.0.0.1/estatpro"
+//const db = "mongodb+srv://pro:"+process.env.MongoPwd+"@mycluster.pbbtvdv.mongodb.net/estatpro";
 
 //connect to database
 mongoose.connect(db)
@@ -44,7 +45,6 @@ mongoose.connection.on('error', function () {
 
 
 app.get('*', (req,res)=>{
-
     //send html file
     res.sendFile(__dirname + "/public/controller/controller.html")
 });

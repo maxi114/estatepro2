@@ -256,3 +256,72 @@ footer {
     font-weight: 500;
     text-decoration-line: underline;
 }
+/*---------for screens less than 500px --------------------*/
+@media screen and (max-width: 510px) {
+
+    #img {
+        width: 150px;
+        height: 40px;
+    }
+
+    #nav {
+        max-width: 100vw;
+        padding: 10px;
+    }
+
+    .conttainer {
+        max-width: 500px;
+        margin: auto;
+    }
+
+    .titlee h1{
+        font-size: 50px;
+    }
+
+    .immm{
+        margin-top: 50px;
+    }
+    
+    .img09{
+        margin: 0px;
+        max-width: 350px;
+        margin: auto;
+    }
+    #img555{
+        height: 400px;
+    }
+      /*--------footer-------------*/
+      footer {
+        margin-top: 50px;
+        padding: 10px;
+        height: fit-content;
+        overflow: hidden;
+    }
+
+    .footerleft {
+        margin: 0px;
+    }
+
+    .fooerlogo {
+        width: 100px;
+    }
+
+    .footerright {
+        position: relative;
+        width: 300px;
+        overflow: hidden;
+        right: 0px;
+        left: 0px;
+        top: 30px;
+    }
+
+    .footermenu {
+        margin-bottom: 30px;
+    }
+
+    .footer3 {
+        position: relative;
+        margin: 0px;
+        margin: auto;
+    }
+}

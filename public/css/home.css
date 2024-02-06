@@ -305,7 +305,7 @@ label {
     position: absolute;
     top: 25px;
     margin-left: 600px;
-    width: 600px;
+    max-width: 600px;
 }
 
 .card-text {
@@ -373,13 +373,13 @@ label {
     margin-top: 300px;
 }
 
-.contenthelp h1{
-color: var(--Neutral-800, #070707);
-font-family: Plus Jakarta Sans;
-font-size: 50px;
-font-style: normal;
-font-weight: 700;
-text-transform: capitalize;
+.contenthelp h1 {
+    color: var(--Neutral-800, #070707);
+    font-family: Plus Jakarta Sans;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 700;
+    text-transform: capitalize;
 }
 
 .contenthelp p {
@@ -536,10 +536,263 @@ footer {
     text-decoration-line: underline;
 }
 
+/*---------for screens less than 500px --------------------*/
+@media screen and (max-width: 510px) {
+    .conttainer {
+        margin: 0px;
+        max-width: 400px;
+        margin: auto;
+        position: relative;
+    }
+
+    #img {
+        width: 150px;
+        height: 40px;
+    }
+
+    #nav {
+        max-width: 100vw;
+        padding: 10px;
+    }
+
+    /*------content-----------*/
+    .content1 {
+        max-width: 100vw
+    }
+
+    .content11 {
+        padding: 10px;
+        max-width: 450px;
+        margin: auto;
+    }
+
+    .left {
+        margin: 0px;
+        height: 150px;
+    }
+
+    .ltxt {
+        font-size: 40px;
+    }
+
+    .right {
+        margin-top: -100px;
+    }
+
+    .rtxt {
+        font-size: 20px;
+        margin: 0px;
+    }
+
+    .ratings {
+        width: 150px;
+    }
+
+    .ratxt {
+        width: 150px;
+    }
+
+    .d-flex {
+        margin: 0px;
+        bottom: -80px;
+        margin-top: 100px;
+        width: 100%;
+        display: none;
+    }
+
+    /*bottom content first section*/
+    .contentbottom {
+        margin-top: 400px;
+    }
+
+    /*-------------div holding the second content-----------*/
+    .content2 {
+        height: 300px;
+        max-width: 500px;
+        margin: auto;
+        padding: 10px;
+    }
+
+    .trust {
+        margin: 0px;
+    }
+
+    .comp {
+        right: 0px;
+        top: 10px;
+        max-width: 170px;
+        margin: auto;
+        text-align: center;
+    }
+
+    .cmpl {
+        margin: 0px;
+        margin-bottom: 20px;
+    }
+
+    #hrline {
+        max-width: 350px;
+        margin: auto;
+    }
+
+    #sftr img{
+        width: 90px;
+    }
+    /*-------third section----------------------*/
+    .content3 {
+        max-width: 500px;
+        margin: auto;
+        height: 3500px;
+    }
+
+    .ppr {
+        width: 200px;
+    }
+
+    .exp {
+        display: none;
+    }
+
+    .left3 {
+        position: relative;
+        left: 0px;
+        width: 100%;
+        padding: 10px;
+    }
+
+    .right3 {
+        position: relative;
+        right: 0px;
+        margin: 0px;
+        width: 100%;
+        padding: 10px;
+    }
+
+    /*--------------what our clients say-------------*/
+    .clienttt {
+        margin-top: 1200px;
+    }
+
+    #tdam {
+        font-size: 25px;
+        margin: 20px 0px 20px 0px;
+    }
+
+    #cardd {
+        margin: 0px;
+        width: 300px;
+        margin: auto;
+        left: 0px;
+        right: 0px;
+        top: -100px;
+    }
+    .imghs{
+        padding: 0px;
+        margin: 0px;
+        margin: auto;
+    }
+
+    /* we will help you find your dream home-----*/
+    .helpics{
+        position: relative;
+        max-width: 400px;
+        height: 400px;
+        margin: auto;
+    }
+    .tngs{
+        display: none;
+    }
+
+    /*-------subscribe to news later----*/
+    .news{
+        border: solid 1px green;
+        margin-top: 300px;
+        max-width: 400px;
+        margin: auto;
+        padding: 10px;
+        position: relative;
+        height: 400px;
+        margin-top: 400px;
+        display: none;
+    }
+
+    .newsh1{
+        margin-top: 0px;
+        max-width: 400px;
+        margin: auto;
+        font-size: 30px;
+        text-align: center;
+    }
+
+    #dds{
+        position: relative;
+        margin: 0px;
+        right: 0;
+        left: 0;
+        padding: 0px;
+        max-width: 250px;
+        margin: auto;
+        height: 150px;
+        margin-top: -40px;
+        background-color: #F15A29;
+    }
+    #me-2{
+        position: absolute;
+        margin: 0px;
+        height: 50px;
+        max-width: 300px;
+        margin-top: 20px;
+        text-align: center;
+    }
+    #dds button{
+        position: absolute;
+        height: 40px;
+        margin: auto;
+        margin-top: 90px;
+        background-color: white;
+        color: #070707;
+    }
+
+    /*--------footer-------------*/
+    footer{
+        margin-top: 50px;
+        padding: 10px;
+        height: fit-content;
+        overflow: hidden;
+    }
+
+    .footerleft{
+        margin: 0px;
+    }
+
+    .fooerlogo{
+        width: 100px;
+    }
+
+    .footerright{
+        position: relative;
+        width: 300px;
+        overflow: hidden;
+        right: 0px;
+        left: 0px;
+        top: 30px;
+    }
+
+    .footermenu{
+        margin-bottom: 30px;
+    }
+    .footer3{
+        position: relative;
+        margin: 0px;
+        margin: auto;
+    }
+}
+
 @media screen and (max-width: 1000px) {
 
-    .conttainer{
-        
+    .conttainer {
+        max-width: 1000px;
+        margin: auto;
     }
 
     /*-------content----------------*/
@@ -579,60 +832,61 @@ footer {
 
     /*---------------------third section (popular resident)----------------------*/
 
-    .content3{
+    .content3 {
         height: 1500px;
     }
 
-    .card-link{
+    .card-link {
         width: 100px;
     }
 
     /*------------------what our clients say---------------------*/
-    .clienttt{
+    .clienttt {
         padding-left: 10px;
     }
 
-    .clientt2{
+    .clientt2 {
         height: 900px;
     }
 
-    .imghs1{
+    .imghs1 {
         width: 100%;
         margin: auto;
     }
 
-    #cardd{
+    #cardd {
         margin: 0px;
         max-width: 600px;
         margin: auto;
         margin-top: 300px;
     }
 
+
     /*-----------------we will help you find your dream home section----------------------*/
-    .help{
+    .help {
         height: fit-content;
         padding: 20px;
     }
 
-    .helpics{
+    .helpics {
         position: relative;
         width: 100%;
     }
 
-    .contenthelp{
+    .contenthelp {
         position: relative;
         width: 100%;
         margin-top: 100px;
     }
 
     /*----------subscribe to our news letter section-----------*/
-    .newsh1{
+    .newsh1 {
         width: 300px;
         margin-left: 50px;
         margin-top: 50px;
     }
 
-    #dds{
+    #dds {
         width: 450px;
         margin-right: 50px;
         margin-bottom: 130px;
