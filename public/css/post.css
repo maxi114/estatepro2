@@ -440,8 +440,8 @@ footer {
     text-decoration-line: underline;
 }
 
-/*---------for screens less than 500px --------------------*/
-@media screen and (max-width: 510px) {
+/*---------for screens less than 700px --------------------*/
+@media screen and (max-width: 700px) {
 
     .conttainer {
         margin: 0px;
@@ -560,4 +560,56 @@ footer {
         margin: auto;
     }
 
+}
+
+@media screen and (max-width: 950px) {
+
+    /*--------footer-------------*/
+    footer{
+       margin-top: 50px;
+       padding: 10px;
+       height: fit-content;
+       overflow: hidden;
+   }
+
+   .footerleft{
+       margin: 0px;
+   }
+
+   .fooerlogo{
+       width: 100px;
+   }
+
+   .footerright{
+       position: relative;
+       width: 300px;
+       overflow: hidden;
+       right: 0px;
+       left: 0px;
+       top: 30px;
+   }
+
+   .footermenu{
+       margin-bottom: 30px;
+   }
+   .footer3{
+       position: relative;
+       margin: 0px;
+       margin: auto;
+   }
+}
+
+@media screen and (min-width: 701px) and (max-width: 1000px) {
+    .forms form{
+        max-width: 650px;
+        margin: auto;
+        margin-top: 30px;
+    }
+    .row .col .form-control{
+        max-width: 300px;
+    }
+
+    .news{
+        display: none;
+    }
 }

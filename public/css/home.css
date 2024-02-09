@@ -100,7 +100,7 @@ label {
     position: relative;
     max-width: 90%;
     margin: auto;
-    margin-top: 70px;
+    margin-top: 170px;
 }
 
 .image {
@@ -156,6 +156,7 @@ label {
     max-width: 1500px;
     margin: auto;
     position: relative;
+    display: none;
 }
 
 .trust {
@@ -537,7 +538,7 @@ footer {
 }
 
 /*---------for screens less than 500px --------------------*/
-@media screen and (max-width: 510px) {
+@media screen and (max-width: 600px) {
     .conttainer {
         margin: 0px;
         max-width: 400px;
@@ -633,6 +634,7 @@ footer {
     #hrline {
         max-width: 350px;
         margin: auto;
+        display: none;
     }
 
     #sftr img{
@@ -788,10 +790,47 @@ footer {
     }
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 950px) {
+
+     /*--------footer-------------*/
+     footer{
+        margin-top: 50px;
+        padding: 10px;
+        height: fit-content;
+        overflow: hidden;
+    }
+
+    .footerleft{
+        margin: 0px;
+    }
+
+    .fooerlogo{
+        width: 100px;
+    }
+
+    .footerright{
+        position: relative;
+        width: 300px;
+        overflow: hidden;
+        right: 0px;
+        left: 0px;
+        top: 30px;
+    }
+
+    .footermenu{
+        margin-bottom: 30px;
+    }
+    .footer3{
+        position: relative;
+        margin: 0px;
+        margin: auto;
+    }
+}
+
+@media screen and (max-width: 1200px) {
 
     .conttainer {
-        max-width: 1000px;
+        max-width: 1200px;
         margin: auto;
     }
 
@@ -812,6 +851,10 @@ footer {
         margin-bottom: 100px;
     }
 
+    #hrline {
+        max-width: 600px;
+        margin: auto;
+    }
     /*----------div holding the second section-----------*/
     .trust {
         position: relative;
@@ -880,6 +923,9 @@ footer {
     }
 
     /*----------subscribe to our news letter section-----------*/
+    .news{
+        display: none;
+    }
     .newsh1 {
         width: 300px;
         margin-left: 50px;

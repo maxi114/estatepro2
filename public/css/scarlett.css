@@ -65,6 +65,7 @@ body {
     border-radius: 10px;
 }
 
+
 .card-txt {
     color: var(--Neutral-800, #070707);
     font-family: Plus Jakarta Sans;
@@ -83,14 +84,14 @@ body {
     line-height: normal;
 }
 
-.card-text{
+.card-text {
     color: var(--Neutral-800, #070707);
-font-family: Plus Jakarta Sans;
-font-size: 20px;
-font-style: normal;
-font-weight: 400;
-line-height: 150%; 
-opacity: 0.7;
+    font-family: Plus Jakarta Sans;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    opacity: 0.7;
 }
 
 .btnn {
@@ -256,8 +257,9 @@ footer {
     font-weight: 500;
     text-decoration-line: underline;
 }
-/*---------for screens less than 500px --------------------*/
-@media screen and (max-width: 510px) {
+
+/*---------for screens less than 600px --------------------*/
+@media screen and (max-width: 600px) {
 
     #img {
         width: 150px;
@@ -274,24 +276,31 @@ footer {
         margin: auto;
     }
 
-    .titlee h1{
+    .titlee h1 {
         font-size: 50px;
     }
 
-    .immm{
+    .immm {
         margin-top: 50px;
     }
-    
-    .img09{
+
+    .img09 {
         margin: 0px;
         max-width: 350px;
         margin: auto;
     }
-    #img555{
+
+    #img555 {
         height: 400px;
     }
-      /*--------footer-------------*/
-      footer {
+
+}
+
+/*-footer--------*/
+@media screen and (max-width:950px) {
+
+    /*--------footer-------------*/
+    footer {
         margin-top: 50px;
         padding: 10px;
         height: fit-content;

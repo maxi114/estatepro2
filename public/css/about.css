@@ -564,8 +564,8 @@ footer {
     text-decoration-line: underline;
 }
 
-/*---------for screens less than 500px --------------------*/
-@media screen and (max-width: 510px) {
+/*---------for screens less than 600px --------------------*/
+@media screen and (max-width: 600px) {
 
     .conttainer {
         margin: 0px;
@@ -663,4 +663,96 @@ footer {
         margin: 0px;
         margin: auto;
     }
+}
+
+@media screen and (max-width: 950px) {
+
+    /*--------footer-------------*/
+    footer{
+       margin-top: 50px;
+       padding: 10px;
+       height: fit-content;
+       overflow: hidden;
+   }
+
+   .footerleft{
+       margin: 0px;
+   }
+
+   .fooerlogo{
+       width: 100px;
+   }
+
+   .footerright{
+       position: relative;
+       width: 300px;
+       overflow: hidden;
+       right: 0px;
+       left: 0px;
+       top: 30px;
+   }
+
+   .footermenu{
+       margin-bottom: 30px;
+   }
+   .footer3{
+       position: relative;
+       margin: 0px;
+       margin: auto;
+   }
+}
+
+@media screen and (max-width: 1150px) {
+
+    .conttainer {
+        margin: 0px;
+        position: relative;
+        padding: 0px;
+    }
+
+
+    /*--subscribe to our news later---*/
+    .news {
+        display: none;
+    }
+
+    /*-----div holding the first section---------*/
+    .about{
+        height: 450px;
+        max-width: 600px;
+    }
+
+    .about .left{
+        position: relative;
+        max-width: 600px;
+    }
+
+
+    .about .right{
+        position: relative;
+        max-width: 100%;
+        margin-top: 30px;
+    }
+
+    /*------div holding the images------*/
+    .images{
+        height: 400px;
+    }
+
+    .images .leftimg{
+        height: 300px;
+    }
+
+    .images .rightimg{
+        height: 300px;
+    }
+
+    /*---------section3 articles------*/
+    .articles h1{
+        font-size: 60px;
+        max-width: 400px;
+        margin: auto;
+        margin-top: 130px;
+    }
+
 }
