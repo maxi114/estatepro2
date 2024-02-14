@@ -26,8 +26,8 @@ app.use('/post', router);
 dotenv.config({ vaerbose: true });
 
 //db connection string
-const db = "mongodb://127.0.0.1/estatpro"
-//const db = "mongodb+srv://pro:"+process.env.MongoPwd+"@mycluster.pbbtvdv.mongodb.net/estatpro";
+//const db = "mongodb://127.0.0.1/estatpro"
+const db = "mongodb+srv://pro:"+process.env.MongoPwd+"@mycluster.pbbtvdv.mongodb.net/estatpro";
 
 //connect to database
 mongoose.connect(db)
