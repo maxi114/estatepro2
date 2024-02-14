@@ -256,6 +256,7 @@ footer {
     font-weight: 500;
     text-decoration-line: underline;
 }
+
 /*---------for screens less than 600px --------------------*/
 @media screen and (max-width: 600px) {
 
@@ -287,9 +288,11 @@ footer {
         max-width: 350px;
         margin: auto;
     }
+
     #img555{
         height: 400px;
     }
+
       /*--------footer-------------*/
       footer {
         margin-top: 50px;
@@ -364,3 +367,4 @@ footer {
         margin: auto;
     }
 }
+
